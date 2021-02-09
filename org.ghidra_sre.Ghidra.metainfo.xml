@@ -29,19 +29,19 @@
     <screenshot type="default">
       <caption>“Project” Window</caption>
       <image width="805" height="605">
-        https://github.com/hadess/flathub/raw/ghidra/screenshots/ghidra-project-view.png
+        https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-project-view.png
       </image>
     </screenshot>
     <screenshot>
       <caption>Main Window</caption>
       <image width="1384" height="856">
-        https://github.com/hadess/flathub/raw/ghidra/screenshots/ghidra-main-window.png
+        https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-main-window.png
       </image>
     </screenshot>
     <screenshot>
       <caption>“Bytes” view</caption>
       <image width="1384" height="856">
-        https://github.com/hadess/flathub/raw/ghidra/screenshots/ghidra-bytes-view.png
+        https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-bytes-view.png
       </image>
     </screenshot>
   </screenshots>
