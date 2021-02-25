@@ -56,7 +56,13 @@
                 {
                     "type": "archive",
                     "sha256": "8cf8806dd5b8b7c7826f04fad8b86fc7e07ea380eae497f3035f8c974de72cf8",
-                    "url": "https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip"
+                    "url": "https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://ghidra-sre.org/",
+                        "version-pattern": "<a href=\"ghidra_([\\d\\.-]*)_PUBLIC_[\\d-]*.zip\" class=\"badge badge-light\">Latest<\\/a>",
+                        "url-pattern": "<a href=\"(ghidra_[\\d\\.-]*_PUBLIC_[\\d-]*.zip)\" class=\"badge badge-light\">Latest<\\/a>"
+                    }
                 },
                 {
                     "type": "file",
