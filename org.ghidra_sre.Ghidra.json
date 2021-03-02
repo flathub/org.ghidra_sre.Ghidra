@@ -1,14 +1,14 @@
 {
-    "app-id" : "org.ghidra_sre.Ghidra",
+    "app-id": "org.ghidra_sre.Ghidra",
     "default-branch": "stable",
-    "runtime" : "org.freedesktop.Platform",
-    "runtime-version" : "20.08",
-    "sdk" : "org.freedesktop.Sdk",
-    "sdk-extensions" : [
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "20.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk11"
     ],
-    "command" : "ghidra",
-    "finish-args" : [
+    "command": "ghidra",
+    "finish-args": [
         "--share=network",
         "--share=ipc",
         "--socket=x11",
@@ -18,12 +18,12 @@
         "--env=PATH=/usr/bin:/app/bin:/app/jdk/bin",
         "--env=JAVA_HOME=/app/jdk"
     ],
-    "modules" : [
+    "modules": [
         {
             "name": "openjdk",
             "buildsystem": "simple",
             "build-commands": [
-              "/usr/lib/sdk/openjdk11/installjdk.sh"
+                "/usr/lib/sdk/openjdk11/installjdk.sh"
             ]
         },
         {
@@ -52,11 +52,17 @@
                 "sed -i 's,bg,fg,' /app/lib/ghidra/ghidraRun",
                 "ln -s /app/lib/ghidra/ghidraRun /app/bin/ghidra"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "archive",
                     "sha256": "8cf8806dd5b8b7c7826f04fad8b86fc7e07ea380eae497f3035f8c974de72cf8",
-                    "url": "https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip"
+                    "url": "https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://ghidra-sre.org/",
+                        "version-pattern": "<a href=\"ghidra_([\\d\\.-]*)_PUBLIC_[\\d-]*.zip\" class=\"badge badge-light\">Latest<\\/a>",
+                        "url-pattern": "<a href=\"(ghidra_[\\d\\.-]*_PUBLIC_[\\d-]*.zip)\" class=\"badge badge-light\">Latest<\\/a>"
+                    }
                 },
                 {
                     "type": "file",
