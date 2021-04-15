@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "sha256": "8cf8806dd5b8b7c7826f04fad8b86fc7e07ea380eae497f3035f8c974de72cf8",
-                    "url": "https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip",
+                    "sha256": "9019c78f8b38d68fd40908b040466974a370e26ba51b2aaeafc744171040f714",
+                    "url": "https://ghidra-sre.org/ghidra_9.2.3_PUBLIC_20210325.zip",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ghidra-sre.org/",
