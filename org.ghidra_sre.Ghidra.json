@@ -49,8 +49,10 @@
                 "install -Dm644 ghidra_8_256x256x32.png /app/share/icons/org.ghidra_sre.Ghidra.png",
                 "install -Dm644 org.ghidra_sre.Ghidra.desktop /app/share/applications/org.ghidra_sre.Ghidra.desktop",
                 "install -Dm644 org.ghidra_sre.Ghidra.metainfo.xml /app/share/metainfo/org.ghidra_sre.Ghidra.metainfo.xml",
-                "sed -i 's,bg,fg,' /app/lib/ghidra/ghidraRun",
-                "ln -s /app/lib/ghidra/ghidraRun /app/bin/ghidra"
+                "install -Dm755 ghidra.sh /app/bin/ghidra",
+                "mv /app/lib/ghidra/support/launch.properties{,.orig}",
+                "ln -s /var/config/ghidra.properties /app/lib/ghidra/support/launch.properties",
+                "sed -i 's,bg,fg,' /app/lib/ghidra/ghidraRun"
             ],
             "sources": [
                 {
@@ -71,6 +73,15 @@
                 {
                     "type": "file",
                     "path": "org.ghidra_sre.Ghidra.metainfo.xml"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "ghidra.sh",
+                    "commands": [
+                        "# Create a default ghidra.properties if one wasn't already set, for the user to edit",
+                        "[[ -f /var/config/ghidra.properties ]] || cp /app/lib/ghidra/support/launch.properties.orig /var/config/ghidra.properties",
+                        "exec /app/lib/ghidra/ghidraRun \"$@\""
+                    ]
                 }
             ]
         }
