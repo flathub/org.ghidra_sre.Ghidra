@@ -62,8 +62,8 @@
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ghidra-sre.org/",
-                        "version-pattern": "<a href=\"ghidra_([\\d\\.-]*)_PUBLIC_[\\d-]*.zip\" class=\"badge badge-light\">Latest<\\/a>",
-                        "url-pattern": "<a href=\"(ghidra_[\\d\\.-]*_PUBLIC_[\\d-]*.zip)\" class=\"badge badge-light\">Latest<\\/a>"
+                        "version-pattern": "role=\"button\">Download Ghidra v([\\d\\.-]*)</a>",
+                        "url-pattern": "<a class=\"btn btn-ghidra btn-lg\" href=\"(https://github.com/NationalSecurityAgency/ghidra/releases/download/.*.zip)\""
                     }
                 },
                 {
