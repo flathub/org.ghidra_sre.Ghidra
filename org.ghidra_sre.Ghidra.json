@@ -60,10 +60,10 @@
                     "sha256": "c1f18cdb12e2e1c0313e7becf7f0387226937ac67ad6c6e5056fa889229f969a",
                     "url": "https://ghidra-sre.org/ghidra_9.2.4_PUBLIC_20210427.zip",
                     "x-checker-data": {
-                        "type": "html",
-                        "url": "https://ghidra-sre.org/",
-                        "version-pattern": "role=\"button\">Download Ghidra v([\\d\\.-]*)</a>",
-                        "url-pattern": "<a class=\"btn btn-ghidra btn-lg\" href=\"(https://github.com/NationalSecurityAgency/ghidra/releases/download/.*.zip)\""
+                        "type": "json",
+                        "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/latest",
+                        "version-query": ".tag_name | sub(\"^Ghidra_\"; \"\") | sub(\"_build\"; \"\")",
+                        "url-query": ".assets[] | .browser_download_url"
                     }
                 },
                 {
