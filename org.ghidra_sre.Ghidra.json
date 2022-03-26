@@ -70,10 +70,8 @@
                     "url": "https://github.com/NationalSecurityAgency/ghidra.git",
                     "commit": "63bb30ac8bee0e3ff34c9812d751edcfdc70dbe4",
                     "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/latest",
-                        "version-query": ".tag_name | sub(\"^Ghidra_\"; \"\") | sub(\"_build\"; \"\")",
-                        "url-query": ".assets[] | .browser_download_url"
+                        "type": "git",
+                        "tag-pattern": "^Ghidra_([\\d.]+)_build$"
                     }
                 },
                 {
@@ -133,7 +131,11 @@
                     "tag": "Ghidra_9.2_build",
                     "url": "https://github.com/NationalSecurityAgency/ghidra-data.git",
                     "commit": "7d843ec229d43c2d1a8178aaa892be90e37e95a2",
-                    "dest": "ghidra-data"
+                    "dest": "ghidra-data",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^Ghidra_([\\d.]+)_build$"
+                    }
                 },
                 "gradle-dependencies.json"
             ]
