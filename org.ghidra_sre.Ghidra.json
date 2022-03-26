@@ -48,9 +48,12 @@
             "name": "ghidra",
             "buildsystem": "simple",
             "build-commands": [
-                "for i in docs Extensions Ghidra GPL licenses server support ; do install -d $i /app/lib/ghidra/ ; cp -r $i/ /app/lib/ghidra/$i/ ; done",
-                "install -Dm755 ghidraRun /app/lib/ghidra/ghidraRun",
-                "icotool -x support/ghidra.ico --index=8",
+                "cp dex2jar/lib/dex-*.jar dependencies/flatRepo",
+                "cp -r ghidra-data/FunctionID dependencies/fidb",
+                "source /usr/lib/sdk/openjdk11/enable.sh && gradle buildGhidra",
+                "unzip build/dist/ghidra_*_DEV_*_linux_*.zip",
+                "icotool -x Ghidra/RuntimeScripts/Windows/support/ghidra.ico --index=8",
+                "cd ghidra_*_DEV && for i in docs Extensions Ghidra GPL licenses server support ; do install -d $i /app/lib/ghidra/ ; cp -r $i/ /app/lib/ghidra/$i/ ; done && install -Dm755 ghidraRun /app/lib/ghidra/ghidraRun",
                 "install -Dm644 ghidra_8_256x256x32.png /app/share/icons/org.ghidra_sre.Ghidra.png",
                 "install -Dm644 org.ghidra_sre.Ghidra.desktop /app/share/applications/org.ghidra_sre.Ghidra.desktop",
                 "install -Dm644 org.ghidra_sre.Ghidra.metainfo.xml /app/share/metainfo/org.ghidra_sre.Ghidra.metainfo.xml",
@@ -61,9 +64,10 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "sha256": "c1f18cdb12e2e1c0313e7becf7f0387226937ac67ad6c6e5056fa889229f969a",
-                    "url": "http://web.archive.org/web/20210629191145/https://ghidra-sre.org/ghidra_9.2.4_PUBLIC_20210427.zip",
+                    "type": "git",
+                    "tag": "Ghidra_10.1.2_build",
+                    "url": "https://github.com/NationalSecurityAgency/ghidra.git",
+                    "commit": "63bb30ac8bee0e3ff34c9812d751edcfdc70dbe4",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/latest",
