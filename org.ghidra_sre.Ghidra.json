@@ -87,6 +87,44 @@
                         "[[ -f /var/config/ghidra.properties ]] || cp /app/lib/ghidra/support/launch.properties.orig /var/config/ghidra.properties",
                         "exec /app/lib/ghidra/ghidraRun \"$@\""
                     ]
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/pxb1988/dex2jar/releases/download/2.0/dex-tools-2.0.zip",
+                    "sha256": "7907eb4d6e9280b6e17ddce7ee0507eae2ef161ee29f70a10dbc6944fdca75bc",
+                    "dest": "dex2jar"
+                },
+                {
+                    "type": "file",
+                    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/AXMLPrinter2.jar",
+                    "sha256": "00ed038eb6abaf6ddec8d202a3ed7a81b521458f4cd459948115cfd02ff59d6d",
+                    "dest": "dependencies/flatRepo"
+                },
+                {
+                    "type": "file",
+                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-beta-13.01/yajsw-beta-13.01.zip",
+                    "sha256": "430fb7901bd0fd52a5b90bd0cbd89e9d334077eb72a9b26896f465de1e593a99",
+                    "dest": "dependencies/GhidraServer"
+                },
+                {
+                    "type": "file",
+                    "url": "https://archive.eclipse.org/tools/cdt/releases/8.6/cdt-8.6.0.zip",
+                    "sha256": "81b7d19d57c4a3009f4761699a72e8d642b5e1d9251d2bb98df438b1e28f8ba9",
+                    "dest": "dependencies/GhidraDev"
+                },
+                {
+                    "type": "file",
+                    "url": "https://sourceforge.net/projects/pydev/files/pydev/PyDev 6.3.1/PyDev 6.3.1.zip",
+                    "sha256": "4d81fe9d8afe7665b8ea20844d3f5107f446742927c59973eade4f29809b0699",
+                    "dest": "dependencies/GhidraDev",
+                    "dest-filename": "PyDev 6.3.1.zip"
+                },
+                {
+                    "type": "git",
+                    "tag": "Ghidra_9.2_build",
+                    "url": "https://github.com/NationalSecurityAgency/ghidra-data.git",
+                    "commit": "7d843ec229d43c2d1a8178aaa892be90e37e95a2",
+                    "dest": "ghidra-data"
                 }
             ]
         }
