@@ -125,7 +125,8 @@
                     "url": "https://github.com/NationalSecurityAgency/ghidra-data.git",
                     "commit": "7d843ec229d43c2d1a8178aaa892be90e37e95a2",
                     "dest": "ghidra-data"
-                }
+                },
+                "gradle-dependencies.json"
             ]
         }
     ]
