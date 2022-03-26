@@ -53,7 +53,7 @@
                 "source /usr/lib/sdk/openjdk11/enable.sh && gradle buildGhidra",
                 "unzip build/dist/ghidra_*_DEV_*_linux_*.zip",
                 "icotool -x Ghidra/RuntimeScripts/Windows/support/ghidra.ico --index=8",
-                "cd ghidra_*_DEV && for i in docs Extensions Ghidra GPL licenses server support ; do install -d $i /app/lib/ghidra/ ; cp -r $i/ /app/lib/ghidra/$i/ ; done && install -Dm755 ghidraRun /app/lib/ghidra/ghidraRun",
+                "cp -r ghidra_*_DEV /app/lib/ghidra",
                 "install -Dm644 ghidra_8_256x256x32.png /app/share/icons/org.ghidra_sre.Ghidra.png",
                 "install -Dm644 org.ghidra_sre.Ghidra.desktop /app/share/applications/org.ghidra_sre.Ghidra.desktop",
                 "install -Dm644 org.ghidra_sre.Ghidra.metainfo.xml /app/share/metainfo/org.ghidra_sre.Ghidra.metainfo.xml",
