@@ -62,8 +62,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "sha256": "c1f18cdb12e2e1c0313e7becf7f0387226937ac67ad6c6e5056fa889229f969a",
-                    "url": "http://web.archive.org/web/20210629191145/https://ghidra-sre.org/ghidra_9.2.4_PUBLIC_20210427.zip",
+                    "sha256": "9c73b6657413686c0af85909c20581e764107add2a789038ebc6eca49dc4e812",
+                    "url": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.3_build/ghidra_10.1.3_PUBLIC_20220421.zip",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/latest",
