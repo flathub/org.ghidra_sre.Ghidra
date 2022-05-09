@@ -35,7 +35,12 @@
                 {
                     "type": "archive",
                     "url": "http://savannah.nongnu.org/download/icoutils/icoutils-0.31.1.tar.bz2",
-                    "sha256": "26e29d3c78f25d4cdf402501ac0414c51a9a092daebf6c9dee3b837dee693093"
+                    "sha256": "26e29d3c78f25d4cdf402501ac0414c51a9a092daebf6c9dee3b837dee693093",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1360,
+                        "url-template": "https://download.savannah.gnu.org/releases/icoutils/icoutils-$version.tar.bz2"
+                    }
                 }
             ]
         },
