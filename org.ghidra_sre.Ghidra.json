@@ -71,6 +71,7 @@
                     "commit": "74f83c9a9bd79d6850312029398ac95b0541d286",
                     "x-checker-data": {
                         "type": "git",
+                        "is-main-source": true,
                         "tag-pattern": "^Ghidra_([\\d.]+)_build$"
                     }
                 },
