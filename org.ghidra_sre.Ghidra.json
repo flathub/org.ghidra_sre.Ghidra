@@ -5,7 +5,7 @@
     "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk11"
+        "org.freedesktop.Sdk.Extension.openjdk17"
     ],
     "command": "ghidra",
     "finish-args": [
@@ -24,7 +24,7 @@
             "name": "openjdk",
             "buildsystem": "simple",
             "build-commands": [
-                "/usr/lib/sdk/openjdk11/installjdk.sh"
+                "/usr/lib/sdk/openjdk17/installjdk.sh"
             ]
         },
         {
@@ -52,7 +52,7 @@
                 "cp dex2jar/lib/dex-*.jar dependencies/flatRepo",
                 "cp -r ghidra-data/FunctionID dependencies/fidb",
                 "sed -i 's/^application.release.name=DEV$/application.release.name=FLATPAK/' Ghidra/application.properties",
-                "source /usr/lib/sdk/openjdk11/enable.sh && gradle buildGhidra",
+                "source /usr/lib/sdk/openjdk17/enable.sh && gradle buildGhidra",
                 "unzip build/dist/ghidra_*_FLATPAK_*_linux_*.zip",
                 "icotool -x Ghidra/RuntimeScripts/Windows/support/ghidra.ico --index=8",
                 "cp -r ghidra_*_FLATPAK /app/lib/ghidra",
@@ -67,9 +67,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "Ghidra_10.1.5_build",
+                    "tag": "Ghidra_10.2_build",
                     "url": "https://github.com/NationalSecurityAgency/ghidra.git",
-                    "commit": "9c724c1add630100969cd9347b6437e0697f86fa",
+                    "commit": "17884b878680e640dd5c30210736a1d062ae5ba2",
                     "x-checker-data": {
                         "type": "json",
                         "is-main-source": true,
@@ -114,8 +114,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-beta-13.01/yajsw-beta-13.01.zip",
-                    "sha256": "430fb7901bd0fd52a5b90bd0cbd89e9d334077eb72a9b26896f465de1e593a99",
+                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-13.05/yajsw-stable-13.05.zip",
+                    "sha256": "ff7a4c8262f7d24079b16607122bad8f6fb024f051c27b91883d9498568429a9",
                     "dest": "dependencies/GhidraServer"
                 },
                 {
