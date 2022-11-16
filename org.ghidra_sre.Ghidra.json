@@ -138,8 +138,11 @@
                     "commit": "7d843ec229d43c2d1a8178aaa892be90e37e95a2",
                     "dest": "ghidra-data",
                     "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^Ghidra_([\\d.]+)_build$"
+                        "type": "json",
+                        "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra-data/releases/latest",
+                        "tag-query": ".tag_name",
+                        "version-query": ".tag_name | sub(\"^Ghidra_\"; \"\")",
+                        "timestamp-query": ".published_at"
                     }
                 },
                 "gradle-dependencies.json"
