@@ -139,7 +139,7 @@
                     "dest": "ghidra-data",
                     "x-checker-data": {
                         "type": "git",
-                        "tag-pattern": "^Ghidra_([\\d.]+)_build$"
+                        "tag-pattern": "^Ghidra_([\\d.]+)$"
                     }
                 },
                 "gradle-dependencies.json"
