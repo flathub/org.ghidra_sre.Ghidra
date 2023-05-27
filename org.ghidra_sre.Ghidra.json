@@ -102,8 +102,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/pxb1988/dex2jar/releases/download/2.0/dex-tools-2.0.zip",
-                    "sha256": "7907eb4d6e9280b6e17ddce7ee0507eae2ef161ee29f70a10dbc6944fdca75bc",
+                    "url": "https://github.com/pxb1988/dex2jar/releases/download/v2.1/dex2jar-2.1.zip",
+                    "sha256": "7a9bdf843d43de4d1e94ec2e7b6f55825017b0c4a7ee39ff82660e2493a46f08",
                     "dest": "dex2jar"
                 },
                 {
@@ -114,8 +114,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-13.05/yajsw-stable-13.05.zip",
-                    "sha256": "ff7a4c8262f7d24079b16607122bad8f6fb024f051c27b91883d9498568429a9",
+                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-13.09/yajsw-stable-13.09.zip",
+                    "sha256": "4dae732a535846ae5dfab753e82a4d5f93ad9a05a065e2172bb9774a1b15453a",
                     "dest": "dependencies/GhidraServer"
                 },
                 {
