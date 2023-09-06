@@ -2,7 +2,7 @@
     "app-id": "org.ghidra_sre.Ghidra",
     "default-branch": "stable",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk17"
