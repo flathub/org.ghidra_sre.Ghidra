@@ -1,7 +1,7 @@
-From 1ca6679b69835648df709bb165fb16f81d5296b6 Mon Sep 17 00:00:00 2001
+From 2200f70894c76cb54ecf8b63e7f32f82907c2533 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Fri, 25 Mar 2022 11:13:53 -0700
-Subject: [PATCH 01/25] WebAssembly support.
+Subject: [PATCH 01/24] WebAssembly support.
 
 Merged from https://github.com/nneonneo/ghidra-wasm-plugin/.
 
@@ -10673,350 +10673,10 @@ index 000000000000..18c1ae5c0a38
 2.41.0
 
 
-From e367e48fa7adc8d4d6f1a9d359063d04bd5f847c Mon Sep 17 00:00:00 2001
-From: Robert Xiao <brx@cs.ubc.ca>
-Date: Fri, 25 Mar 2022 17:38:47 -0700
-Subject: [PATCH 02/25] WebAssembly: add a help page to explain the finer
- points of the extension.
-
-I was hoping to add this to a Processors help submenu, but it doesn't exist,
-so I put it in the Appendix instead for now.
----
- Ghidra/Processors/WebAssembly/build.gradle    |   2 +
- .../WebAssembly/certification.manifest        |   4 +
- .../src/main/help/help/TOC_Source.xml         |   7 ++
- .../src/main/help/help/shared/Frontpage.css   |  58 ++++++++++
- .../help/help/topics/WebAssembly/help.html    | 103 ++++++++++++++++++
- .../main/help/help/topics/WebAssembly/help.md |  92 ++++++++++++++++
- 6 files changed, 266 insertions(+)
- create mode 100644 Ghidra/Processors/WebAssembly/src/main/help/help/TOC_Source.xml
- create mode 100644 Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
- create mode 100644 Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
- create mode 100644 Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-
-diff --git a/Ghidra/Processors/WebAssembly/build.gradle b/Ghidra/Processors/WebAssembly/build.gradle
-index 9603c522224c..166811759dd5 100644
---- a/Ghidra/Processors/WebAssembly/build.gradle
-+++ b/Ghidra/Processors/WebAssembly/build.gradle
-@@ -18,9 +18,11 @@ apply from: "$rootProject.projectDir/gradle/javaProject.gradle"
- apply from: "$rootProject.projectDir/gradle/processorProject.gradle"
- apply from: "$rootProject.projectDir/gradle/jacocoProject.gradle"
- apply from: "$rootProject.projectDir/gradle/javaTestProject.gradle"
-+apply from: "$rootProject.projectDir/gradle/helpProject.gradle"
- apply plugin: 'eclipse'
- eclipse.project.name = 'Processors WebAssembly'
- 
- dependencies {
- 	api project(':Base')
-+	helpPath project(path: ':Base', configuration: 'helpPath')
- }
-diff --git a/Ghidra/Processors/WebAssembly/certification.manifest b/Ghidra/Processors/WebAssembly/certification.manifest
-index a167e968a89a..d3ba62ffd652 100644
---- a/Ghidra/Processors/WebAssembly/certification.manifest
-+++ b/Ghidra/Processors/WebAssembly/certification.manifest
-@@ -1,5 +1,9 @@
- ##VERSION: 2.0
- Module.manifest||GHIDRA||||END|
-+src/main/help/help/TOC_Source.xml||GHIDRA||||END|
-+src/main/help/help/shared/Frontpage.css||GHIDRA||||END|
-+src/main/help/help/topics/WebAssembly/help.html||GHIDRA||||END|
-+src/main/help/help/topics/WebAssembly/help.md||GHIDRA||||END|
- data/languages/BasicOps.sinc||GHIDRA||||END|
- data/languages/Leb128.sinc||GHIDRA||||END|
- data/languages/Leb128_u32.sinc||GHIDRA||||END|
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/TOC_Source.xml b/Ghidra/Processors/WebAssembly/src/main/help/help/TOC_Source.xml
-new file mode 100644
-index 000000000000..dbad6be64ab5
---- /dev/null
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/TOC_Source.xml
-@@ -0,0 +1,7 @@
-+<?xml version='1.0' encoding='ISO-8859-1' ?>
-+
-+<tocroot>
-+  <tocref id="Appendix">
-+    <tocdef id="WebAssembly" text="WebAssembly" target="help/topics/WebAssembly/help.html" />
-+  </tocref>
-+</tocroot>
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css b/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
-new file mode 100644
-index 000000000000..452bf6e6b5b7
---- /dev/null
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
-@@ -0,0 +1,58 @@
-+/* ###
-+ * IP: GHIDRA
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ * 
-+ *      http://www.apache.org/licenses/LICENSE-2.0
-+ * 
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+/*
-+									WARNING!
-+    This file is copied to all help directories.  If you change this file, you must copy it 
-+    to each src/main/help/help/shared directory.									
-+									
-+	
-+	Java Help Note:  JavaHelp does not accept sizes (like in 'margin-top') in anything but 
-+	px (pixel) or with no type marking. 
-+
-+*/ 
-+
-+body { margin-bottom: 50px; margin-left: 10px; margin-right: 10px; margin-top: 10px; } /* some padding to improve readability */ 
-+li { font-family:times new roman; font-size:14pt; }
-+h1 { color:#000080; font-family:times new roman; font-size:36pt; font-style:italic; font-weight:bold; text-align:center; }
-+h2 { margin: 10px; margin-top: 20px; color:#984c4c; font-family:times new roman; font-size:18pt; font-weight:bold; }
-+h3 { margin-left: 10px; margin-top: 20px; color:#0000ff; font-family:times new roman; font-size:14pt; font-weight:bold;  }
-+h4 { margin-left: 10px; margin-top: 20px; font-family:times new roman; font-size:14pt; font-style:italic; }
-+ 
-+/*
-+	 P tag code.  Most of the help files nest P tags inside of blockquote tags (the was the 
-+	 way it had been done in the beginning).  The net effect is that the text is indented.  In 
-+	 modern HTML we would use CSS to do this.  We need to support the Ghidra P tags, nested in
-+	 blockquote tags, as well as naked P tags.  The following two lines accomplish this.  Note
-+	 that the 'blockquote p' definition will inherit from the first 'p' definition.
-+*/
-+p { margin-left: 40px; font-family:times new roman; font-size:14pt; }
-+blockquote p { margin-left: 10px; }
-+
-+p.providedbyplugin { color:#7f7f7f; margin-left: 10px; font-size:14pt; margin-top:100px  }
-+p.ProvidedByPlugin { color:#7f7f7f; margin-left: 10px; font-size:14pt; margin-top:100px }
-+p.relatedtopic { color:#800080; margin-left: 10px; font-size:14pt; }
-+p.RelatedTopic { color:#800080; margin-left: 10px; font-size:14pt; }
-+
-+/* 
-+	We wish for a tables to have space between it and the preceding element, so that text
-+	is not too close to the top of the table.  Also, nest the table a bit so that it is clear
-+	the table relates to the preceding text.
-+*/
-+table { margin-left: 20px; margin-top: 10px; width: 80%;}
-+td { font-family:times new roman; font-size:14pt; vertical-align: top; }
-+th { font-family:times new roman; font-size:14pt; font-weight:bold; background-color: #EDF3FE; }
-+
-+code { color: black; font-family: courier new; font-size: 14pt; }
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-new file mode 100644
-index 000000000000..83ecc4e3ffc5
---- /dev/null
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-@@ -0,0 +1,103 @@
-+<!DOCTYPE html>
-+<html>
-+  <head>
-+    <meta name="generator" content="markdown_py 3.3.6 with fenced_code extension">
-+    <meta http-equiv="Content-Language" content="en-us">
-+    <meta charset="utf-8" />
-+
-+    <title>WebAssembly</title>
-+    <link rel="stylesheet" type="text/css" href="../../shared/Frontpage.css">
-+  </head>
-+
-+  <body><h1>WebAssembly</h1>
-+
-+<p>Module to load WebAssembly files into Ghidra, supporting disassembly and decompilation.</p>
-+<h2>Features</h2>
-+<ul>
-+<li>Support for all WebAssembly 1.0 opcodes</li>
-+<li>Cross-references for function calls and branches</li>
-+<li>Cross-references for table entries and globals containing function pointers</li>
-+<li>Recovery of the C stack, when the stack pointer is stored in a global variable (typical for compilers like Emscripten)</li>
-+</ul>
-+<h2>Tips</h2>
-+<ul>
-+<li>Many Wasm programs, especially those compiled by Emscripten or Clang, use a
-+global variable to store the C stack pointer. This module will attempt to
-+automatically detect the C stack pointer during analysis; if it fails, you may
-+need to set it yourself before performing initial analysis by setting the "C
-+Stack Pointer" in the Wasm Pre-Analyzer settings.</li>
-+<li>By default, the C stack is assumed to grow in the negative direction, i.e.
-+towards smaller addresses. However, compilers are actually free to choose either
-+stack direction, and both positive and negative-growing stacks have been
-+observed in real-world samples. If your C stack grows upwards (e.g. indicated by
-+an add operation to the C stack pointer in the function prologue rather than a
-+subtract), select the <code>pos-stack</code> compiler when importing the file, or via <code>Set
-+Language...</code> on an existing file in the project window.</li>
-+<li>Emscripten will usually translate function pointer calls into calls to
-+exported <code>dyncall_</code> functions, which take a call-type-specific index as the
-+first parameter. The index is used to index a sub-section of the main function
-+table (table0) to find the function to call. The included script
-+<code>analyze_dyncalls.py</code> can analyze the <code>dyncall_</code> functions, extract the indices,
-+and rename referenced functions according to their call type and function index
-+(which will often serve as function pointer values in memory). This can be used
-+to resolve function pointer references, for example.</li>
-+<li>Element segments may be passive, or have offset expressions that depend on
-+imported globals. In this case, the element segments are not automatically
-+loaded to the table. You can manually load these segments by calling
-+<code>WasmLoader.loadElementsToTable</code>. For example, to load element segment #0 to
-+table #0 at offset 0 in Python:</li>
-+</ul>
-+<pre><code class="language-python">from wasm import WasmLoader
-+from wasm.analysis import WasmAnalysis
-+from ghidra.util.task import ConsoleTaskMonitor
-+monitor = ConsoleTaskMonitor()
-+WasmLoader.loadElementsToTable(currentProgram, WasmAnalysis.getState(currentProgram).module, 0, 0, 0, monitor)
-+</code></pre>
-+<ul>
-+<li>Similarly, data segments can be manually loaded as well. For example, to load
-+data segment #5 to memory #0 at offset 0x1000, do the following in Python:</li>
-+</ul>
-+<pre><code class="language-python">from wasm import WasmLoader
-+from wasm.analysis import WasmAnalysis
-+from ghidra.util.task import ConsoleTaskMonitor
-+monitor = ConsoleTaskMonitor()
-+WasmLoader.loadDataToMemory(currentProgram, WasmAnalysis.getState(currentProgram).module, 5, 0, 0x1000, monitor)
-+</code></pre>
-+<h2>Limitations and Known Bugs</h2>
-+<ul>
-+<li>Currently, inlining functions (via marking them "In Line") is not supported
-+and will confuse the decompiler. This is because the inlined function's
-+references to stack and local variables will affect the caller. I tried to solve
-+this limitation by injecting code to save and restore stack and locals on
-+function entry/exit, but ran into a Ghidra limitation - the decompiler does not
-+inject "uponentry" Pcode into inlined functions.</li>
-+<li>Currently, there is no way to change the C stack pointer after initial analysis
-+(attempting to re-analyze the program with a new C stack pointer will not change
-+anything).</li>
-+<li>Initial analysis and disassembly can be very slow. This is primarily because
-+Ghidra is quite slow at setting large numbers of context registers.</li>
-+<li>Multiple return values are untested and will probably not work.</li>
-+</ul>
-+<h2>Internals</h2>
-+<p>This module uses a pre-analyzer (WasmPreAnalyzer) to analyze all functions and
-+opcodes, providing contextual information to the SLEIGH disassembler to enable
-+correct disassembly (for example, operand sizes when they depend on the types in
-+the value stack, branch target addresses, etc). In order to support recovery of
-+the C stack, this module converts Wasm stack operations into operations on a
-+register file. This frees up the decompiler's stack analysis to focus on the
-+behaviour of the C stack, since the decompiler only supports a single stack.
-+Additionally, parameter passing and returns are handled by virtual input/output
-+registers which are copied to/from the stack and locals registers via Pcode
-+injection.</p>
-+<p>Four different types of "registers" are defined: input (iN), output (oN), stack
-+(sN) and locals (lN). Of these, only the locals will be visible in the
-+disassembly; stack registers will appear in the PCode, and input/output
-+registers will appear in function types.</p>
-+<h2>Acknowledgements</h2>
-+<ul>
-+<li>This module borrows loader functionality from this repo: https://github.com/andr3colonel/ghidra_wasm</li>
-+<li>This module was directly based on https://github.com/garrettgu10/ghidra-wasm-plugin</li>
-+</ul>
-+
-+  </body>
-+</html>
-\ No newline at end of file
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-new file mode 100644
-index 000000000000..84e447a33079
---- /dev/null
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-@@ -0,0 +1,92 @@
-+Module to load WebAssembly files into Ghidra, supporting disassembly and decompilation.
-+
-+## Features
-+
-+- Support for all WebAssembly 1.0 opcodes
-+- Cross-references for function calls and branches
-+- Cross-references for table entries and globals containing function pointers
-+- Recovery of the C stack, when the stack pointer is stored in a global variable (typical for compilers like Emscripten)
-+
-+## Tips
-+
-+- Many Wasm programs, especially those compiled by Emscripten or Clang, use a
-+global variable to store the C stack pointer. This module will attempt to
-+automatically detect the C stack pointer during analysis; if it fails, you may
-+need to set it yourself before performing initial analysis by setting the "C
-+Stack Pointer" in the Wasm Pre-Analyzer settings.
-+- By default, the C stack is assumed to grow in the negative direction, i.e.
-+towards smaller addresses. However, compilers are actually free to choose either
-+stack direction, and both positive and negative-growing stacks have been
-+observed in real-world samples. If your C stack grows upwards (e.g. indicated by
-+an add operation to the C stack pointer in the function prologue rather than a
-+subtract), select the `pos-stack` compiler when importing the file, or via `Set
-+Language...` on an existing file in the project window.
-+- Emscripten will usually translate function pointer calls into calls to
-+exported `dyncall_` functions, which take a call-type-specific index as the
-+first parameter. The index is used to index a sub-section of the main function
-+table (table0) to find the function to call. The included script
-+`analyze_dyncalls.py` can analyze the `dyncall_` functions, extract the indices,
-+and rename referenced functions according to their call type and function index
-+(which will often serve as function pointer values in memory). This can be used
-+to resolve function pointer references, for example.
-+- Element segments may be passive, or have offset expressions that depend on
-+imported globals. In this case, the element segments are not automatically
-+loaded to the table. You can manually load these segments by calling
-+`WasmLoader.loadElementsToTable`. For example, to load element segment #0 to
-+table #0 at offset 0 in Python:
-+
-+```python
-+from wasm import WasmLoader
-+from wasm.analysis import WasmAnalysis
-+from ghidra.util.task import ConsoleTaskMonitor
-+monitor = ConsoleTaskMonitor()
-+WasmLoader.loadElementsToTable(currentProgram, WasmAnalysis.getState(currentProgram).module, 0, 0, 0, monitor)
-+```
-+- Similarly, data segments can be manually loaded as well. For example, to load
-+data segment #5 to memory #0 at offset 0x1000, do the following in Python:
-+
-+```python
-+from wasm import WasmLoader
-+from wasm.analysis import WasmAnalysis
-+from ghidra.util.task import ConsoleTaskMonitor
-+monitor = ConsoleTaskMonitor()
-+WasmLoader.loadDataToMemory(currentProgram, WasmAnalysis.getState(currentProgram).module, 5, 0, 0x1000, monitor)
-+```
-+
-+## Limitations and Known Bugs
-+
-+- Currently, inlining functions (via marking them "In Line") is not supported
-+and will confuse the decompiler. This is because the inlined function's
-+references to stack and local variables will affect the caller. I tried to solve
-+this limitation by injecting code to save and restore stack and locals on
-+function entry/exit, but ran into a Ghidra limitation - the decompiler does not
-+inject "uponentry" Pcode into inlined functions.
-+- Currently, there is no way to change the C stack pointer after initial analysis
-+(attempting to re-analyze the program with a new C stack pointer will not change
-+anything).
-+- Initial analysis and disassembly can be very slow. This is primarily because
-+Ghidra is quite slow at setting large numbers of context registers.
-+- Multiple return values are untested and will probably not work.
-+
-+## Internals
-+
-+This module uses a pre-analyzer (WasmPreAnalyzer) to analyze all functions and
-+opcodes, providing contextual information to the SLEIGH disassembler to enable
-+correct disassembly (for example, operand sizes when they depend on the types in
-+the value stack, branch target addresses, etc). In order to support recovery of
-+the C stack, this module converts Wasm stack operations into operations on a
-+register file. This frees up the decompiler's stack analysis to focus on the
-+behaviour of the C stack, since the decompiler only supports a single stack.
-+Additionally, parameter passing and returns are handled by virtual input/output
-+registers which are copied to/from the stack and locals registers via Pcode
-+injection.
-+
-+Four different types of "registers" are defined: input (iN), output (oN), stack
-+(sN) and locals (lN). Of these, only the locals will be visible in the
-+disassembly; stack registers will appear in the PCode, and input/output
-+registers will appear in function types.
-+
-+## Acknowledgements
-+
-+- This module borrows loader functionality from this repo: https://github.com/andr3colonel/ghidra_wasm
-+- This module was directly based on https://github.com/garrettgu10/ghidra-wasm-plugin
--- 
-2.41.0
-
-
-From 7c358ed6ee1d1f460f2fea5bcf21de974c536003 Mon Sep 17 00:00:00 2001
+From 0ccedca851b1f3d18f11661525894b5b2f863bf6 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Sun, 27 Mar 2022 01:53:58 -0700
-Subject: [PATCH 03/25] WebAssembly: make funcref/externref 32 bits in size.
+Subject: [PATCH 02/24] WebAssembly: make funcref/externref 32 bits in size.
 
 The use of 64 bits was mostly a debugging feature to ensure we didn't accidentally
 mix references with normal types. 64 bit addresses cause some problems, though,
@@ -11255,10 +10915,10 @@ index 022629c71146..3fb1528c2b5b 100644
 2.41.0
 
 
-From c7fae82d6074243a414c61bb9dd11fa98bf884c5 Mon Sep 17 00:00:00 2001
+From 76a9fc7c894b48b816b0e74f408cc6d6cacb8391 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 29 Mar 2022 03:32:39 -0700
-Subject: [PATCH 04/25] WebAssembly: reduce dependency on Program class.
+Subject: [PATCH 03/24] WebAssembly: reduce dependency on Program class.
 
 Using Program throughout is rather lazy, and in many cases totally unnecessary.
 Using finer-grained interfaces and classes like AddressFactory allows usage of
@@ -12564,10 +12224,10 @@ index 18c1ae5c0a38..12afd7bd95f9 100644
 2.41.0
 
 
-From 3e0cc110086c9614b77537845256a52bf7560273 Mon Sep 17 00:00:00 2001
+From 475f92b6593c5ba91873d377ec12509939c7be20 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 29 Mar 2022 04:37:11 -0700
-Subject: [PATCH 05/25] WebAssembly: load .module directly to 0x8000000 in RAM
+Subject: [PATCH 04/24] WebAssembly: load .module directly to 0x8000000 in RAM
 
 This allows the whole module to be loaded in memory and eliminates the previous
 duplication of the .code bytes in the .module and the .function bytes in RAM.
@@ -12747,10 +12407,10 @@ index 10823223293d..4940bfcac8dd 100644
 2.41.0
 
 
-From 6afcf939c4c4735944c92dcb4bd83cc3e5760b0d Mon Sep 17 00:00:00 2001
+From 73aa8ab331956bc329e5ce3dc9fb820ab0d0b6be Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 29 Mar 2022 17:53:01 -0700
-Subject: [PATCH 06/25] WebAssembly: extend regs to 16 bytes to prepare for
+Subject: [PATCH 05/24] WebAssembly: extend regs to 16 bytes to prepare for
  vector insts
 
 Vector instructions will require 128-bit values, so prepare for that change by
@@ -18642,10 +18302,10 @@ index 9a806783483c..463e670d4f10 100644
 2.41.0
 
 
-From 5ec369aa3b052a18eab589e70cef9f37f7f80ffc Mon Sep 17 00:00:00 2001
+From d79b557bc237ab3311b3308a637b36a63c88daf9 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 29 Mar 2022 19:29:39 -0700
-Subject: [PATCH 07/25] WebAssembly: Emulation support
+Subject: [PATCH 06/24] WebAssembly: Emulation support
 
 This patch implements a EmulateInstructionStateModifier for Wasm which provides
 support for emulating Wasm instructions.
@@ -18660,14 +18320,12 @@ operations depends on metadata like the types of imports or globals).
  .../data/languages/WebAssembly.sinc           |  17 +-
  .../data/languages/WebAssembly.slaspec        |  12 +-
  .../ghidra_scripts/emulate_writev.py          |  57 ++++
- .../help/help/topics/WebAssembly/help.html    |   8 +
- .../main/help/help/topics/WebAssembly/help.md |  12 +
  .../WasmEmulateInstructionStateModifier.java  | 296 ++++++++++++++++++
  .../emulation/WasmEmulationHelper.java        | 135 ++++++++
  .../wasm/analysis/WasmFunctionAnalysis.java   |   8 +
  .../wasm/pcode/PcodeInjectLibraryWasm.java    |   2 +
  .../main/java/wasm/pcode/PcodeOpEmitter.java  |   2 +-
- 13 files changed, 561 insertions(+), 9 deletions(-)
+ 11 files changed, 541 insertions(+), 9 deletions(-)
  create mode 100644 Ghidra/Processors/WebAssembly/ghidra_scripts/emulate_writev.py
  create mode 100644 Ghidra/Processors/WebAssembly/src/main/java/ghidra/program/emulation/WasmEmulateInstructionStateModifier.java
  create mode 100644 Ghidra/Processors/WebAssembly/src/main/java/ghidra/program/emulation/WasmEmulationHelper.java
@@ -18873,48 +18531,6 @@ index 000000000000..c40789c2ba20
 +            wasmHelper.simulateReturn(emuHelper.emulator, len(msg))
 +        else:
 +            wasmHelper.simulateReturn(emuHelper.emulator, -1)
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-index 83ecc4e3ffc5..ec997c4e5ec8 100644
---- a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-@@ -63,6 +63,14 @@ from ghidra.util.task import ConsoleTaskMonitor
- monitor = ConsoleTaskMonitor()
- WasmLoader.loadDataToMemory(currentProgram, WasmAnalysis.getState(currentProgram).module, 5, 0, 0x1000, monitor)
- </code></pre>
-+<h2>Emulation</h2>
-+<p>This module supports emulation of Wasm code using the standard Ghidra emulation
-+framework, i.e. via <code>EmulatorHelper</code>, <code>Emulator</code> and <code>Emulate</code>.</p>
-+<p>Stack frames for inactive function frames (locals, Wasm stack variables, and the
-+return address) are stored on a shadow stack, which begins at the <code>ss0</code> register
-+and grows towards higher addresses in the register space.</p>
-+<p>The <code>emulate_writev.py</code> script demonstrates emulation with hooking of the
-+Emscripten <code>__syscall3</code> function in order to process <code>writev</code> calls.</p>
- <h2>Limitations and Known Bugs</h2>
- <ul>
- <li>Currently, inlining functions (via marking them "In Line") is not supported
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-index 84e447a33079..49935bfb0eec 100644
---- a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.md
-@@ -53,6 +53,18 @@ monitor = ConsoleTaskMonitor()
- WasmLoader.loadDataToMemory(currentProgram, WasmAnalysis.getState(currentProgram).module, 5, 0, 0x1000, monitor)
- ```
- 
-+## Emulation
-+
-+This module supports emulation of Wasm code using the standard Ghidra emulation
-+framework, i.e. via `EmulatorHelper`, `Emulator` and `Emulate`.
-+
-+Stack frames for inactive function frames (locals, Wasm stack variables, and the
-+return address) are stored on a shadow stack, which begins at the `ss0` register
-+and grows towards higher addresses in the register space.
-+
-+The `emulate_writev.py` script demonstrates emulation with hooking of the
-+Emscripten `__syscall3` function in order to process `writev` calls.
-+
- ## Limitations and Known Bugs
- 
- - Currently, inlining functions (via marking them "In Line") is not supported
 diff --git a/Ghidra/Processors/WebAssembly/src/main/java/ghidra/program/emulation/WasmEmulateInstructionStateModifier.java b/Ghidra/Processors/WebAssembly/src/main/java/ghidra/program/emulation/WasmEmulateInstructionStateModifier.java
 new file mode 100644
 index 000000000000..7084b122a5ad
@@ -19414,10 +19030,10 @@ index 12afd7bd95f9..4de4cbf0625d 100644
 2.41.0
 
 
-From 1b3833d26201998463d69d3b0029c03ae99c064d Mon Sep 17 00:00:00 2001
+From 3e8a0a17341deceaf13d9daab546c5634dce13fc Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 29 Mar 2022 22:00:03 -0700
-Subject: [PATCH 08/25] WebAssembly: correctly handle u32 opcodes.
+Subject: [PATCH 07/24] WebAssembly: correctly handle u32 opcodes.
 
 0xFC (and 0xFD) have a u32 as the second operand, so we need to handle this
 correctly.
@@ -19435,11 +19051,11 @@ correctly.
  create mode 100644 Ghidra/Processors/WebAssembly/data/languages/Leb128_opc2_2b.sinc
 
 diff --git a/Ghidra/Processors/WebAssembly/certification.manifest b/Ghidra/Processors/WebAssembly/certification.manifest
-index d3ba62ffd652..e2f26d2e2f66 100644
+index a167e968a89a..9ee86494b1ae 100644
 --- a/Ghidra/Processors/WebAssembly/certification.manifest
 +++ b/Ghidra/Processors/WebAssembly/certification.manifest
-@@ -6,6 +6,9 @@ src/main/help/help/topics/WebAssembly/help.html||GHIDRA||||END|
- src/main/help/help/topics/WebAssembly/help.md||GHIDRA||||END|
+@@ -2,6 +2,9 @@
+ Module.manifest||GHIDRA||||END|
  data/languages/BasicOps.sinc||GHIDRA||||END|
  data/languages/Leb128.sinc||GHIDRA||||END|
 +data/languages/Leb128_opc2.sinc||GHIDRA||||END|
@@ -20800,10 +20416,10 @@ index b830f7da9596..0388a9010de3 100644
 2.41.0
 
 
-From cd20d26825bc4cc04508bf3ad423409ffb90ea39 Mon Sep 17 00:00:00 2001
+From 6e3f7e0c5de85c6f23831cbb268440d4298750f8 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 30 Mar 2022 01:33:40 -0700
-Subject: [PATCH 09/25] WebAssembly: SIMD support.
+Subject: [PATCH 08/24] WebAssembly: SIMD support.
 
 Disassembly and verification are implemented, but almost all of the SIMD opcodes
 are just stubbed out with pcodeops for now, so semantics aren't implemented. This
@@ -20820,10 +20436,10 @@ is probably good enough for now.
  create mode 100644 Ghidra/Processors/WebAssembly/data/languages/VectorOps.sinc
 
 diff --git a/Ghidra/Processors/WebAssembly/certification.manifest b/Ghidra/Processors/WebAssembly/certification.manifest
-index e2f26d2e2f66..3ddae21c5ee2 100644
+index 9ee86494b1ae..456d1ed407e0 100644
 --- a/Ghidra/Processors/WebAssembly/certification.manifest
 +++ b/Ghidra/Processors/WebAssembly/certification.manifest
-@@ -10,6 +10,7 @@ data/languages/Leb128_opc2.sinc||GHIDRA||||END|
+@@ -6,6 +6,7 @@ data/languages/Leb128_opc2.sinc||GHIDRA||||END|
  data/languages/Leb128_opc2_1b.sinc||GHIDRA||||END|
  data/languages/Leb128_opc2_2b.sinc||GHIDRA||||END|
  data/languages/Leb128_u32.sinc||GHIDRA||||END|
@@ -23180,10 +22796,10 @@ index 963ed4d34efe..a36e53dac726 100644
 2.41.0
 
 
-From beff06ab4dae2e747c76f3a496896114a16c6151 Mon Sep 17 00:00:00 2001
+From 24afcfeb02ac07ea0657290585914638133845f0 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Thu, 14 Apr 2022 00:42:16 -0700
-Subject: [PATCH 10/25] WebAssembly: create code length data to avoid undefined
+Subject: [PATCH 09/24] WebAssembly: create code length data to avoid undefined
  bytes
 
 ---
@@ -23250,116 +22866,48 @@ index a7120e5fd014..315033d4c1b5 100644
 2.41.0
 
 
-From 26bb4fa988a4c97564a6963cbb8a2a96b8fb376e Mon Sep 17 00:00:00 2001
+From ae95ce8f51489a2c37fe062ff4ac69fbaa25fdb8 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 12:49:45 -0700
-Subject: [PATCH 11/25] WebAssembly: update help stylesheet to recommended
+Subject: [PATCH 10/24] WebAssembly: update help stylesheet to recommended
  style
 
 ---
- .../WebAssembly/certification.manifest        |  1 -
- .../src/main/help/help/shared/Frontpage.css   | 58 -------------------
- .../help/help/topics/WebAssembly/help.html    |  2 +-
- 3 files changed, 1 insertion(+), 60 deletions(-)
- delete mode 100644 Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
+ .../WebAssembly/certification.manifest          | 17 -----------------
+ 1 file changed, 17 deletions(-)
+ delete mode 100644 Ghidra/Processors/WebAssembly/certification.manifest
 
 diff --git a/Ghidra/Processors/WebAssembly/certification.manifest b/Ghidra/Processors/WebAssembly/certification.manifest
-index 3ddae21c5ee2..63d922004e49 100644
---- a/Ghidra/Processors/WebAssembly/certification.manifest
-+++ b/Ghidra/Processors/WebAssembly/certification.manifest
-@@ -1,7 +1,6 @@
- ##VERSION: 2.0
- Module.manifest||GHIDRA||||END|
- src/main/help/help/TOC_Source.xml||GHIDRA||||END|
--src/main/help/help/shared/Frontpage.css||GHIDRA||||END|
- src/main/help/help/topics/WebAssembly/help.html||GHIDRA||||END|
- src/main/help/help/topics/WebAssembly/help.md||GHIDRA||||END|
- data/languages/BasicOps.sinc||GHIDRA||||END|
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css b/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
 deleted file mode 100644
-index 452bf6e6b5b7..000000000000
---- a/Ghidra/Processors/WebAssembly/src/main/help/help/shared/Frontpage.css
+index 456d1ed407e0..000000000000
+--- a/Ghidra/Processors/WebAssembly/certification.manifest
 +++ /dev/null
-@@ -1,58 +0,0 @@
--/* ###
-- * IP: GHIDRA
-- *
-- * Licensed under the Apache License, Version 2.0 (the "License");
-- * you may not use this file except in compliance with the License.
-- * You may obtain a copy of the License at
-- * 
-- *      http://www.apache.org/licenses/LICENSE-2.0
-- * 
-- * Unless required by applicable law or agreed to in writing, software
-- * distributed under the License is distributed on an "AS IS" BASIS,
-- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-- * See the License for the specific language governing permissions and
-- * limitations under the License.
-- */
--/*
--									WARNING!
--    This file is copied to all help directories.  If you change this file, you must copy it 
--    to each src/main/help/help/shared directory.									
--									
--	
--	Java Help Note:  JavaHelp does not accept sizes (like in 'margin-top') in anything but 
--	px (pixel) or with no type marking. 
--
--*/ 
--
--body { margin-bottom: 50px; margin-left: 10px; margin-right: 10px; margin-top: 10px; } /* some padding to improve readability */ 
--li { font-family:times new roman; font-size:14pt; }
--h1 { color:#000080; font-family:times new roman; font-size:36pt; font-style:italic; font-weight:bold; text-align:center; }
--h2 { margin: 10px; margin-top: 20px; color:#984c4c; font-family:times new roman; font-size:18pt; font-weight:bold; }
--h3 { margin-left: 10px; margin-top: 20px; color:#0000ff; font-family:times new roman; font-size:14pt; font-weight:bold;  }
--h4 { margin-left: 10px; margin-top: 20px; font-family:times new roman; font-size:14pt; font-style:italic; }
-- 
--/*
--	 P tag code.  Most of the help files nest P tags inside of blockquote tags (the was the 
--	 way it had been done in the beginning).  The net effect is that the text is indented.  In 
--	 modern HTML we would use CSS to do this.  We need to support the Ghidra P tags, nested in
--	 blockquote tags, as well as naked P tags.  The following two lines accomplish this.  Note
--	 that the 'blockquote p' definition will inherit from the first 'p' definition.
--*/
--p { margin-left: 40px; font-family:times new roman; font-size:14pt; }
--blockquote p { margin-left: 10px; }
--
--p.providedbyplugin { color:#7f7f7f; margin-left: 10px; font-size:14pt; margin-top:100px  }
--p.ProvidedByPlugin { color:#7f7f7f; margin-left: 10px; font-size:14pt; margin-top:100px }
--p.relatedtopic { color:#800080; margin-left: 10px; font-size:14pt; }
--p.RelatedTopic { color:#800080; margin-left: 10px; font-size:14pt; }
--
--/* 
--	We wish for a tables to have space between it and the preceding element, so that text
--	is not too close to the top of the table.  Also, nest the table a bit so that it is clear
--	the table relates to the preceding text.
--*/
--table { margin-left: 20px; margin-top: 10px; width: 80%;}
--td { font-family:times new roman; font-size:14pt; vertical-align: top; }
--th { font-family:times new roman; font-size:14pt; font-weight:bold; background-color: #EDF3FE; }
--
--code { color: black; font-family: courier new; font-size: 14pt; }
-diff --git a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-index ec997c4e5ec8..7facdfb33ae5 100644
---- a/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-+++ b/Ghidra/Processors/WebAssembly/src/main/help/help/topics/WebAssembly/help.html
-@@ -6,7 +6,7 @@
-     <meta charset="utf-8" />
- 
-     <title>WebAssembly</title>
--    <link rel="stylesheet" type="text/css" href="../../shared/Frontpage.css">
-+    <link rel="stylesheet" type="text/css" href="help/shared/DefaultStyle.css">
-   </head>
- 
-   <body><h1>WebAssembly</h1>
+@@ -1,17 +0,0 @@
+-##VERSION: 2.0
+-Module.manifest||GHIDRA||||END|
+-data/languages/BasicOps.sinc||GHIDRA||||END|
+-data/languages/Leb128.sinc||GHIDRA||||END|
+-data/languages/Leb128_opc2.sinc||GHIDRA||||END|
+-data/languages/Leb128_opc2_1b.sinc||GHIDRA||||END|
+-data/languages/Leb128_opc2_2b.sinc||GHIDRA||||END|
+-data/languages/Leb128_u32.sinc||GHIDRA||||END|
+-data/languages/VectorOps.sinc||GHIDRA||||END|
+-data/languages/WebAssembly-pos-stack.cspec||GHIDRA||||END|
+-data/languages/WebAssembly.cspec||GHIDRA||||END|
+-data/languages/WebAssembly.dwarf||GHIDRA||||END|
+-data/languages/WebAssembly.ldefs||GHIDRA||||END|
+-data/languages/WebAssembly.opinion||GHIDRA||||END|
+-data/languages/WebAssembly.pspec||GHIDRA||||END|
+-data/languages/WebAssembly.sinc||GHIDRA||||END|
+-data/languages/WebAssembly.slaspec||GHIDRA||||END|
 -- 
 2.41.0
 
 
-From b5584ba7cdf179455ac48200c0ada879a19f330b Mon Sep 17 00:00:00 2001
+From 954244e81419bc14ea3a6f7c164fe90404d0ad3b Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 13:45:31 -0700
-Subject: [PATCH 12/25] WebAssembly: remove now-deleted
+Subject: [PATCH 11/24] WebAssembly: remove now-deleted
  DataTypeConflictException
 
 ---
@@ -23391,10 +22939,10 @@ index 0b19b7e78fb6..4a7318e8fe3e 100644
 2.41.0
 
 
-From 65d50e121d4f1952970159ae70325e88d5c4becc Mon Sep 17 00:00:00 2001
+From 8ce74dcd91887a9328853e28d705964d09a0bc20 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 13:54:51 -0700
-Subject: [PATCH 13/25] WebAssembly: update to use standard LEB128 utilities
+Subject: [PATCH 12/24] WebAssembly: update to use standard LEB128 utilities
 
 ---
  .../WasmEmulateInstructionStateModifier.java  |  8 ++---
@@ -24793,10 +24341,10 @@ index e694f24c6002..281b541e069b 100644
 2.41.0
 
 
-From abc649076fe1ba17a7787fba241a8a87279cdd6b Mon Sep 17 00:00:00 2001
+From 3025637a81459770be9507f86fe98fa908393c7a Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 14:46:16 -0700
-Subject: [PATCH 14/25] WebAssembly: disable 2+ output vars for pos-stack as it
+Subject: [PATCH 13/24] WebAssembly: disable 2+ output vars for pos-stack as it
  is unsupported.
 
 Without this, we get the error "<pentry> tags within a group must be
@@ -25587,10 +25135,10 @@ index 4b44d43f59e3..28d5e1b2c12a 100644
 2.41.0
 
 
-From 6687901fa05c9ccf810ba9727f3934f78e4542b5 Mon Sep 17 00:00:00 2001
+From 81292339727eb5962c68454ae03c2c153f380e6c Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 16:26:28 -0700
-Subject: [PATCH 15/25] WebAssembly: Add a new script to handle "flat" dyncall
+Subject: [PATCH 14/24] WebAssembly: Add a new script to handle "flat" dyncall
  namespaces.
 
 It seems like LLVM, for instance, uses table indices as function pointers, so
@@ -25674,10 +25222,10 @@ index 000000000000..b6fb3e4068d2
 2.41.0
 
 
-From 80241b4a9cbec90b5e32712b4a301d44797dd090 Mon Sep 17 00:00:00 2001
+From ba7b351de66db2cc694f0784634710c76c30316c Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 16:27:49 -0700
-Subject: [PATCH 16/25] WebAssembly: Mark __wasm prototypes as register
+Subject: [PATCH 15/24] WebAssembly: Mark __wasm prototypes as register
  strategies
 
 ---
@@ -25715,10 +25263,10 @@ index 1d5b021b5bc7..1b3c1e8d5ce1 100644
 2.41.0
 
 
-From 21958cbd779c666f5e5bf4e17f6a8c0a489aadf6 Mon Sep 17 00:00:00 2001
+From b40d22f67467533f2513ce5dd5ab75d400de46d0 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 27 Mar 2023 16:29:06 -0700
-Subject: [PATCH 17/25] WebAssembly: Add a stack analyzer which creates C stack
+Subject: [PATCH 16/24] WebAssembly: Add a stack analyzer which creates C stack
  variables for Wasm.
 
 The traditional stack analyzer, StackVariableAnalyzer
@@ -26011,10 +25559,10 @@ index 000000000000..318e53910b80
 2.41.0
 
 
-From e877efb855ebd47a5916067e296778adbdec6745 Mon Sep 17 00:00:00 2001
+From 86f90c8466f3e8e3b7a11b8d277e84ff7458b88d Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Tue, 28 Mar 2023 13:50:37 -0700
-Subject: [PATCH 18/25] WebAssembly: update ConstantExpression comment
+Subject: [PATCH 17/24] WebAssembly: update ConstantExpression comment
 
 ---
  .../format/sections/structures/ConstantExpression.java   | 9 +++++++--
@@ -26050,10 +25598,10 @@ index c5bb794042d5..126f8282f63b 100644
 2.41.0
 
 
-From 32cf7b089304cb8abc04a021abfa3302fb25301f Mon Sep 17 00:00:00 2001
+From e32eaf320e61f6711f973d41d6f41644e613caaa Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 29 Mar 2023 04:43:31 -0700
-Subject: [PATCH 19/25] WebAssembly: add wasm build instructions to pcodetest
+Subject: [PATCH 18/24] WebAssembly: add wasm build instructions to pcodetest
 
 This successfully builds a working binary with Clang 15.
 
@@ -26221,10 +25769,10 @@ index 6c6246eabe3e..bb17e1152c29 100644
 2.41.0
 
 
-From cdba6fa59989ede4a4f9489cbd5a7f80f8bbe1a8 Mon Sep 17 00:00:00 2001
+From 15a7b5f0243bbd55409af85b3a647e99365ec73e Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 29 Mar 2023 04:59:44 -0700
-Subject: [PATCH 20/25] WebAssembly: implement pcodetest tests.
+Subject: [PATCH 19/24] WebAssembly: implement pcodetest tests.
 
 We pass almost every test with -O0 and -O3, with the exception of pcode_conversions_Main.
 
@@ -26530,10 +26078,10 @@ index 000000000000..4763eb0182dc
 2.41.0
 
 
-From e09e5175bac19878530613f4a19c3506af986452 Mon Sep 17 00:00:00 2001
+From b535c427972e9be3224f08dc2b776bc6b9713fcc Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 29 Mar 2023 05:38:40 -0700
-Subject: [PATCH 21/25] WebAssembly: Fix pcode_conversions_Main test.
+Subject: [PATCH 20/24] WebAssembly: Fix pcode_conversions_Main test.
 
 This is fixed by implementing unsigned-to-float conversions properly.
 ---
@@ -26584,10 +26132,10 @@ index d045218e8d3f..14baf55630be 100644
 2.41.0
 
 
-From 9010fb97bd4ff551e3cc9c87877d14c9962a409b Mon Sep 17 00:00:00 2001
+From 8f0284c91dbc714aca3a1926d61e49fc15f01946 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 29 Mar 2023 20:16:23 -0700
-Subject: [PATCH 22/25] WebAssembly: add a SIMD pcodetest.
+Subject: [PATCH 21/24] WebAssembly: add a SIMD pcodetest.
 
 Similarly to the x86 AVX2 test, this will allow us to do (basic) testing of Wasm
 SIMD opcodes via autovectorization. Only the -O3 binary is expected to contain
@@ -26713,10 +26261,10 @@ index 000000000000..4859c7529712
 2.41.0
 
 
-From 91f2c95baa167354cee5929f174129bf35b3a9ad Mon Sep 17 00:00:00 2001
+From 2b372bc235611bbf2a4a49b5236d98a1ea25e03f Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Wed, 29 Mar 2023 20:17:57 -0700
-Subject: [PATCH 23/25] WebAssembly: Simplify laneidx vector operands.
+Subject: [PATCH 22/24] WebAssembly: Simplify laneidx vector operands.
 
 laneidx is actually just a byte, not a LEB128. Attempting to use 16 arguments in
 a pcodeop hits a hardcoded limit of 8 args in PcodeEmit, so switch i8x16.shuffle
@@ -27013,10 +26561,10 @@ index eb5b90848142..fd08beaf0112 100644
 2.41.0
 
 
-From 43475119022739e27ec1dd660dd9ddfd02669008 Mon Sep 17 00:00:00 2001
+From ac322b8f76117eccac938a282b83274068e8609f Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Thu, 30 Mar 2023 00:15:45 -0700
-Subject: [PATCH 24/25] WebAssembly: fix load32/load64, simplify some SIMD
+Subject: [PATCH 23/24] WebAssembly: fix load32/load64, simplify some SIMD
  pcode
 
 load32/load64 were incorrectly taking a laneidx, causing disassembly failures.
@@ -27495,10 +27043,10 @@ index 10411e996051..55b5c1eae440 100644
 2.41.0
 
 
-From 91f7c038d368ea5974c9285a184e6063f80d414e Mon Sep 17 00:00:00 2001
+From 60dc816618f1a9f13e81edc506f5cbcd885a0a74 Mon Sep 17 00:00:00 2001
 From: Robert Xiao <brx@cs.ubc.ca>
 Date: Mon, 17 Apr 2023 09:34:46 -0700
-Subject: [PATCH 25/25] WebAssembly: minor updates to sync to master
+Subject: [PATCH 24/24] WebAssembly: minor updates to sync to master
 
 ---
  .../java/ghidra/test/processors/WasmEmulatorTestAdapter.java  | 4 ++--

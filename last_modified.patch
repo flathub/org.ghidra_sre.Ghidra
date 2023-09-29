@@ -1,16 +1,26 @@
+From c351c931f274e973555dc16274493ec29ef8b695 Mon Sep 17 00:00:00 2001
+From: Matthieu CHARETTE <matthieu.charette@gmail.com>
+Date: Fri, 29 Sep 2023 23:09:31 +0200
+Subject: [PATCH] Add support for OSTree's lack of mtime
+
+See https://github.com/NationalSecurityAgency/ghidra/pull/4107
+---
+ .../src/main/java/generic/jar/ResourceFile.java        | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
 diff --git a/Ghidra/Framework/Utility/src/main/java/generic/jar/ResourceFile.java b/Ghidra/Framework/Utility/src/main/java/generic/jar/ResourceFile.java
-index 1b8f3059e..0982f3a1d 100644
+index 022b16c7a5ee..7e514f4158f9 100644
 --- a/Ghidra/Framework/Utility/src/main/java/generic/jar/ResourceFile.java
 +++ b/Ghidra/Framework/Utility/src/main/java/generic/jar/ResourceFile.java
-@@ -31,6 +31,7 @@ public class ResourceFile implements Comparable<ResourceFile> {
+@@ -33,6 +33,7 @@ public class ResourceFile implements Comparable<ResourceFile> {
  	private static final String JAR_FILE_PREFIX = "jar:file:";
  	private Resource resource;
- 	private static Map<String, JarResource> jarRootsMap = new HashMap<String, JarResource>();
+ 	private static Map<String, JarResource> jarRootsMap = new HashMap<>();
 +	private long lastModifiedTime;
  
  	/**
  	 * Construct a ResourceFile that represents a normal file in the file system.
-@@ -182,7 +183,14 @@ public class ResourceFile implements Comparable<ResourceFile> {
+@@ -185,7 +186,14 @@ public class ResourceFile implements Comparable<ResourceFile> {
  	 * @return the time that this file was last modified.
  	 */
  	public long lastModified() {
@@ -26,3 +36,6 @@ index 1b8f3059e..0982f3a1d 100644
  	}
  
  	/**
+-- 
+2.41.0
+
