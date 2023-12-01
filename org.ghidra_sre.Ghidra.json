@@ -139,7 +139,7 @@
                     "type": "git",
                     "tag": "Ghidra_10.5",
                     "url": "https://github.com/NationalSecurityAgency/ghidra-data.git",
-                    "commit": "236663a0a734461222e20dbc743bd8a8b3f94567",
+                    "commit": "89f735e65ac8ebbfe3782c08d4584d4ff78b2b82",
                     "dest": "ghidra-data",
                     "x-checker-data": {
                         "type": "git",
