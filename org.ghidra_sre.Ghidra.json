@@ -50,6 +50,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "cp dex2jar/lib/dex-*.jar dependencies/flatRepo",
+                "cp ghidra-data/lib/*.jar dependencies/flatRepo",
                 "cp -r ghidra-data/FunctionID dependencies/fidb",
                 "sed -i 's/^application.release.name=DEV$/application.release.name=FLATPAK/' Ghidra/application.properties",
                 "source /usr/lib/sdk/openjdk17/enable.sh && gradle buildGhidra",
