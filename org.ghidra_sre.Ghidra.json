@@ -84,10 +84,6 @@
                     "path": "last_modified.patch"
                 },
                 {
-                    "type": "patch",
-                    "path": "wasm-support.patch"
-                },
-                {
                     "type": "file",
                     "path": "org.ghidra_sre.Ghidra.desktop"
                 },
