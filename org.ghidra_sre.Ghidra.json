@@ -68,9 +68,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "Ghidra_11.0_build",
+                    "tag": "Ghidra_11.0.1_build",
                     "url": "https://github.com/NationalSecurityAgency/ghidra.git",
-                    "commit": "4d856572319837d1419833b84fe1c59fd43d1d77",
+                    "commit": "9afec7d5f89a85f55071e6282c20f93fd097a5e0",
                     "x-checker-data": {
                         "type": "json",
                         "is-main-source": true,
