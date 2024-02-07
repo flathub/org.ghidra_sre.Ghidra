@@ -3,7 +3,7 @@
 <component type="desktop">
   <id>org.ghidra_sre.Ghidra</id>
   <name>Ghidra</name>
-  <summary>Ghidra Software Reverse Engineering Suite</summary>
+  <summary>Ghidra Reverse Engineering Suite</summary>
   <developer_name>National Security Agency</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <!-- license from https://github.com/NationalSecurityAgency/ghidra/blob/master/LICENSE -->
