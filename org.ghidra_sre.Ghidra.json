@@ -57,7 +57,7 @@
                 "unzip build/dist/ghidra_*_FLATPAK_*_linux_*.zip",
                 "icotool -x Ghidra/RuntimeScripts/Windows/support/ghidra.ico --index=8",
                 "cp -r ghidra_*_FLATPAK /app/lib/ghidra",
-                "install -Dm644 ghidra_8_256x256x32.png /app/share/icons/org.ghidra_sre.Ghidra.png",
+                "install -Dm644 ghidra_8_256x256x32.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
                 "install -Dm644 org.ghidra_sre.Ghidra.desktop /app/share/applications/org.ghidra_sre.Ghidra.desktop",
                 "install -Dm644 org.ghidra_sre.Ghidra.metainfo.xml /app/share/metainfo/org.ghidra_sre.Ghidra.metainfo.xml",
                 "install -Dm755 ghidra.sh /app/bin/ghidra",
