@@ -49,6 +49,8 @@
   <update_contact>hadess@hadess.net</update_contact>
   <translation/>
   <releases>
+    <release version="11.0.3" date="2024-04-11"/>
+    <release version="11.0.2" date="2024-03-27"/>
     <release version="11.0.1" date="2024-01-30"/>
     <release version="11.0" date="2023-12-22"/>
     <release version="10.4" date="2023-09-29"/>

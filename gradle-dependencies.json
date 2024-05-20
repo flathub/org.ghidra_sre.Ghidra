@@ -1,14 +1,8 @@
 [
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/net/sf/sevenzipjbinding/sevenzipjbinding/16.02-2.01/sevenzipjbinding-16.02-2.01.jar",
-        "sha256": "133ca3f69c8c735d8997c09477504f48a9f2e61ea7b704b3714a9066b1efb88e",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/net/sf/sevenzipjbinding/sevenzipjbinding-all-platforms/16.02-2.01/sevenzipjbinding-all-platforms-16.02-2.01.jar",
-        "sha256": "72fab53a9d31e16d653fe1f400011d02a7f6bc6a91e8634b5cfad5ce15d467bb",
+        "url": "https://repo.maven.apache.org/maven2/com/github/rotty3000/phidias/0.3.7/phidias-0.3.7.jar",
+        "sha256": "c8d0760ce3b0ed1453d435bcdd31e34f0be3ac09024e7e1a98b8a3cebf4a6bb5",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -19,32 +13,8 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.promise/1.2.0/org.osgi.util.promise-1.2.0.jar",
-        "sha256": "fef86e64f584d012a16a0306160764f6179663b90988a226c4641b920f3a4b36",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bnd.util/6.2.0/biz.aQute.bnd.util-6.2.0.jar",
-        "sha256": "e78252fe8c3bb02cca57ef49062c752780808aba557140b3f0af387b2f99fc4a",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/smali/util/2.5.2/util-2.5.2.jar",
-        "sha256": "4f580a9cff3ebb83cb3fd20bec88e37e4f183796ca652732992611620282daea",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/github/rotty3000/phidias/0.3.7/phidias-0.3.7.jar",
-        "sha256": "c8d0760ce3b0ed1453d435bcdd31e34f0be3ac09024e7e1a98b8a3cebf4a6bb5",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/1.7.25/slf4j-nop-1.7.25.jar",
-        "sha256": "6cb127138f41b5a869f9ecdd061ad17799a0e3fe7204600797154eb0432eeb12",
+        "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.jar",
+        "sha256": "2969356ac1e40fe4141948c563690238f5d79d76aec7fd873536867a331ede81",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -55,8 +25,8 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.jar",
-        "sha256": "2969356ac1e40fe4141948c563690238f5d79d76aec7fd873536867a331ede81",
+        "url": "https://repo.maven.apache.org/maven2/net/sf/sevenzipjbinding/sevenzipjbinding/16.02-2.01/sevenzipjbinding-16.02-2.01.jar",
+        "sha256": "133ca3f69c8c735d8997c09477504f48a9f2e61ea7b704b3714a9066b1efb88e",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -67,38 +37,44 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/net/sf/sevenzipjbinding/sevenzipjbinding-all-platforms/16.02-2.01/sevenzipjbinding-all-platforms-16.02-2.01.jar",
+        "sha256": "72fab53a9d31e16d653fe1f400011d02a7f6bc6a91e8634b5cfad5ce15d467bb",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/smali/util/2.5.2/util-2.5.2.jar",
+        "sha256": "4f580a9cff3ebb83cb3fd20bec88e37e4f183796ca652732992611620282daea",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/6.2.0/biz.aQute.bndlib-6.2.0.jar",
         "sha256": "cd9a9027480259726ab0408184ebe478c2ec6f3ff5015166fe8f7809865d3208",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/2.1.1/jung-api-2.1.1.jar",
-        "sha256": "6cb735963c36d5155d0de5f19a03485b9a26e67550e160b3dd89009a6f51694e",
+        "url": "https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bnd.util/6.2.0/biz.aQute.bnd.util-6.2.0.jar",
+        "sha256": "e78252fe8c3bb02cca57ef49062c752780808aba557140b3f0af387b2f99fc4a",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/beust/jcommander/1.64/jcommander-1.64.jar",
-        "sha256": "156be736199c990321d9ff77090b199629cfc9865e2d6c13f7cd291bb1641817",
+        "url": "https://repo.maven.apache.org/maven2/org/osgi/org.osgi.util.promise/1.2.0/org.osgi.util.promise-1.2.0.jar",
+        "sha256": "fef86e64f584d012a16a0306160764f6179663b90988a226c4641b920f3a4b36",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
-        "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+        "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/1.7.25/slf4j-nop-1.7.25.jar",
+        "sha256": "6cb127138f41b5a869f9ecdd061ad17799a0e3fe7204600797154eb0432eeb12",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar",
-        "sha256": "6d4e2b5a118aab62e6e5e29d185a0224eed82c85c40ac3d33cf04a270c3b3744",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/antlr/antlr/3.5.2/antlr-3.5.2.jar",
-        "sha256": "5ac36c2acfb0a0f3d37dafe20b5b570f2643e2d000c648d44503c2738be643df",
+        "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar",
+        "sha256": "18c4a0095d5c1da6b817592e767bb23d29dd2f560ad74df75ff3961dbde25b79",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -109,8 +85,8 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/antlr/ST4/4.0.8/ST4-4.0.8.jar",
-        "sha256": "58caabc40c9f74b0b5993fd868e0f64a50c0759094e6a251aaafad98edfc7a3b",
+        "url": "https://repo.maven.apache.org/maven2/net/sf/jung/jung-api/2.1.1/jung-api-2.1.1.jar",
+        "sha256": "6cb735963c36d5155d0de5f19a03485b9a26e67550e160b3dd89009a6f51694e",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -127,8 +103,26 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/msv/xsdlib/20050913/xsdlib-20050913.jar",
-        "sha256": "6b8efa18ff570c0916da702c46906b9e8a139e1c05dbf1e4d8bdeba244c1b2b3",
+        "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar",
+        "sha256": "6d4e2b5a118aab62e6e5e29d185a0224eed82c85c40ac3d33cf04a270c3b3744",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/com/beust/jcommander/1.64/jcommander-1.64.jar",
+        "sha256": "156be736199c990321d9ff77090b199629cfc9865e2d6c13f7cd291bb1641817",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+        "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/antlr/antlr/3.5.2/antlr-3.5.2.jar",
+        "sha256": "5ac36c2acfb0a0f3d37dafe20b5b570f2643e2d000c648d44503c2738be643df",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -139,32 +133,32 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar",
-        "sha256": "ce3fc8ecb10f39e9a3cddcbb2ce350d272d9cd3d0b1e18e6fe73c3b9389c8734",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar",
-        "sha256": "18c4a0095d5c1da6b817592e767bb23d29dd2f560ad74df75ff3961dbde25b79",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/msv/isorelax/20050913/isorelax-20050913.jar",
         "sha256": "3427152431cf7f967f92e69e5cac16147c5d8fb4b4e5a8a72f5291788efcff8c",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/msv/relaxngDatatype/20050913/relaxngDatatype-20050913.jar",
-        "sha256": "4d45a93eb5cdc32631966673c954b83fc9b60a0681bbddcefa2c4976d04cddf2",
+        "url": "https://repo.maven.apache.org/maven2/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar",
+        "sha256": "ce3fc8ecb10f39e9a3cddcbb2ce350d272d9cd3d0b1e18e6fe73c3b9389c8734",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9.jar",
-        "sha256": "cd96feeb47f34b2559704715db7b179a03a3721f9dc4092c345c718e29b42de4",
+        "url": "https://repo.maven.apache.org/maven2/org/antlr/ST4/4.0.8/ST4-4.0.8.jar",
+        "sha256": "58caabc40c9f74b0b5993fd868e0f64a50c0759094e6a251aaafad98edfc7a3b",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/msv/xsdlib/20050913/xsdlib-20050913.jar",
+        "sha256": "6b8efa18ff570c0916da702c46906b9e8a139e1c05dbf1e4d8bdeba244c1b2b3",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/msv/relaxngDatatype/20050913/relaxngDatatype-20050913.jar",
+        "sha256": "4d45a93eb5cdc32631966673c954b83fc9b60a0681bbddcefa2c4976d04cddf2",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -181,6 +175,12 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.9/animal-sniffer-annotations-1.9.jar",
+        "sha256": "cd96feeb47f34b2559704715db7b179a03a3721f9dc4092c345c718e29b42de4",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
         "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
         "dest": "dependencies/flatRepo"
@@ -189,6 +189,12 @@
         "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.jar",
         "sha256": "211b306cfc44f8f96df3a0a3ddaf75ba8c5289eed77d60d72f889bb855f535e5",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jgrapht/jgrapht-core/1.5.1/jgrapht-core-1.5.1.jar",
+        "sha256": "a4d810cb63e0a77a753d147094fea9dd42e82cfc57aa289f9f85229f26043bb4",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -205,18 +211,6 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jgrapht/jgrapht-core/1.5.1/jgrapht-core-1.5.1.jar",
-        "sha256": "a4d810cb63e0a77a753d147094fea9dd42e82cfc57aa289f9f85229f26043bb4",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jdom/jdom-legacy/1.1.3/jdom-legacy-1.1.3.jar",
-        "sha256": "02bd61a725e8af9b0176b43bf29816d0c748b8ab951385bd127be37489325a0a",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar",
         "sha256": "c967f223487980b9364e94a7c7f9a8a01fd3ee7c19bdbf0b0f9f8cb8511f3d41",
         "dest": "dependencies/flatRepo"
@@ -229,20 +223,14 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jdom/jdom-legacy/1.1.3/jdom-legacy-1.1.3.jar",
+        "sha256": "02bd61a725e8af9b0176b43bf29816d0c748b8ab951385bd127be37489325a0a",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar",
         "sha256": "770cd903fa7b604d1f7ef7ba17f84108667294b2b478be8ed1af3bffb4ae0018",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar",
-        "sha256": "6aecfd5459728a595601cfa07258d131972ffc39b492eb48bdd596577a2f244a",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar",
-        "sha256": "b1fe8b5968b57d8465425357ed2d9dc695504518bed2df5b565c4b8e68c1c8a5",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -253,14 +241,32 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar",
-        "sha256": "c96d60551331a196dac54b745aa642cd078ef89b6f267146b705f2c2cbef052d",
+        "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar",
+        "sha256": "b1fe8b5968b57d8465425357ed2d9dc695504518bed2df5b565c4b8e68c1c8a5",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar",
+        "sha256": "6aecfd5459728a595601cfa07258d131972ffc39b492eb48bdd596577a2f244a",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar",
         "sha256": "d919d904486c037f8d193412da0c92e22a9fa24230b9d67a57855c5c31c7e94e",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar",
+        "sha256": "c96d60551331a196dac54b745aa642cd078ef89b6f267146b705f2c2cbef052d",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar",
+        "sha256": "408376d17aaa8789e7acd055fe404289a11fa335fd7c68a75329049fb7d28ed2",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -283,26 +289,20 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk15on/1.69/bcpkix-jdk15on-1.69.jar",
-        "sha256": "408376d17aaa8789e7acd055fe404289a11fa335fd7c68a75329049fb7d28ed2",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/net/java/dev/timingframework/timingframework/1.0/timingframework-1.0.jar",
         "sha256": "7461e9246c3b05191645a7f94c104680cc31865bb4d912082ac02ff77120cf4b",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar",
-        "sha256": "e4ce1376cc2735e1dde220b62ad0913f51297704daad155a33f386bc5db0d9f7",
+        "url": "https://repo.maven.apache.org/maven2/javax/help/javahelp/2.0.05/javahelp-2.0.05.jar",
+        "sha256": "fcf4922d38ff85184f1d2328317bb60826e14da948abd606ee3d5b8c6a70debd",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/javax/help/javahelp/2.0.05/javahelp-2.0.05.jar",
-        "sha256": "fcf4922d38ff85184f1d2328317bb60826e14da948abd606ee3d5b8c6a70debd",
+        "url": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar",
+        "sha256": "e4ce1376cc2735e1dde220b62ad0913f51297704daad155a33f386bc5db0d9f7",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -319,26 +319,38 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar",
+        "sha256": "0361d1493ff0d94f861359efea91200720635072134792efb7217f6e09d5cffb",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar",
         "sha256": "4e69696892b88b41c55d49ab2fdcc21eead92bf54acc588c0050596c3b75199c",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-jcl/2.16.0/log4j-jcl-2.16.0.jar",
-        "sha256": "e7f836e2b27aa256f3f69280ebe14e1d3e49266c6c3bf000ae996b0f859e2dca",
+        "url": "https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.jar",
+        "sha256": "36a747ca1e0b86f6ea88055b8723bb87030d627766da6288bf077afdeeb0f75a",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar",
+        "sha256": "daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.6.2/postgresql-42.6.2.jar",
+        "sha256": "82629754f309c0b571d1d40ba74fb053855f863752a46ca307c7b3e5860c4b2e",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar",
         "sha256": "ea0505ee7515e58b1ac0e686e4d1a5d9f7d808e251a61bc371aa0595b9963f83",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar",
-        "sha256": "b817c67a40c94249fd59d4e686e3327ed0d3d3fae426b20da0f1e75652cfc461",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -355,38 +367,8 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar",
-        "sha256": "daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar",
-        "sha256": "0361d1493ff0d94f861359efea91200720635072134792efb7217f6e09d5cffb",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/junit/junit/4.10/junit-4.10.jar",
-        "sha256": "36a747ca1e0b86f6ea88055b8723bb87030d627766da6288bf077afdeeb0f75a",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.21.8/protobuf-java-3.21.8.jar",
         "sha256": "0b8581ad810d2dfaefd0dcfbf1569b1450448650238d7e2fd6b176c932d08c95",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar",
-        "sha256": "7939b06f62747d2615416479c739fc8ebdcf48bdd1d554bf7409e686fa1ff0ea",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/github/tomnelson/jungrapht-visualization/1.4/jungrapht-visualization-1.4.jar",
-        "sha256": "97053a1dd2cdab263fb5611f1bc82b862b3099f951e3cd0564e3e23d193f4dd8",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -403,38 +385,20 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/oracle/labs/olcut/olcut-config-protobuf/5.2.0/olcut-config-protobuf-5.2.0.jar",
-        "sha256": "c66a86e464fd822f71ceee89b9253797c3dcfdf656c4db2bf96da471eb97b3ca",
+        "url": "https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar",
+        "sha256": "7939b06f62747d2615416479c739fc8ebdcf48bdd1d554bf7409e686fa1ff0ea",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-classification-tree/4.2.0/tribuo-classification-tree-4.2.0.jar",
-        "sha256": "b95a332d9248ed12958317644cd43d72e6dd8ade0a24f9ca4e52da07bdac63a7",
+        "url": "https://repo.maven.apache.org/maven2/com/github/tomnelson/jungrapht-visualization/1.4/jungrapht-visualization-1.4.jar",
+        "sha256": "97053a1dd2cdab263fb5611f1bc82b862b3099f951e3cd0564e3e23d193f4dd8",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar",
-        "sha256": "acd1c94d1e228aa7b7962f69b21ed3a9fd828eb3a63e4baf9086954e626af1f0",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/com/oracle/labs/olcut/olcut-core/5.2.0/olcut-core-5.2.0.jar",
-        "sha256": "e53e8e090ad4268d22aa53e0682bbbeab1c81e2ca84413fa43602a4163f6be19",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-math/4.2.0/tribuo-math-4.2.0.jar",
-        "sha256": "ecd65d848ff648801704b9ba0f70a646d403020cbded261fd735481a47965512",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-core/4.2.0/tribuo-core-4.2.0.jar",
-        "sha256": "345c337dc2878ec75024982aab0672719b739e718e73d7a2b2efe8b6d5d009bf",
+        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-classification-core/4.2.0/tribuo-classification-core-4.2.0.jar",
+        "sha256": "fafbf93a722b9ab542ee879a5f4f651796e4caea1b67980d5562fe8dd8dba9e6",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -445,8 +409,32 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-core/4.2.0/tribuo-core-4.2.0.jar",
+        "sha256": "345c337dc2878ec75024982aab0672719b739e718e73d7a2b2efe8b6d5d009bf",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-math/4.2.0/tribuo-math-4.2.0.jar",
+        "sha256": "ecd65d848ff648801704b9ba0f70a646d403020cbded261fd735481a47965512",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/com/oracle/labs/olcut/olcut-config-protobuf/5.2.0/olcut-config-protobuf-5.2.0.jar",
+        "sha256": "c66a86e464fd822f71ceee89b9253797c3dcfdf656c4db2bf96da471eb97b3ca",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-util-tokenization/4.2.0/tribuo-util-tokenization-4.2.0.jar",
         "sha256": "6f44f30d9d20e9a9b0b1c30701b72b3de5eda1f6d76d95da9d69074265577682",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-classification-tree/4.2.0/tribuo-classification-tree-4.2.0.jar",
+        "sha256": "b95a332d9248ed12958317644cd43d72e6dd8ade0a24f9ca4e52da07bdac63a7",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -457,8 +445,50 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/com/oracle/labs/olcut/olcut-core/5.2.0/olcut-core-5.2.0.jar",
+        "sha256": "e53e8e090ad4268d22aa53e0682bbbeab1c81e2ca84413fa43602a4163f6be19",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-builtins/3.20.0/jline-builtins-3.20.0.jar",
+        "sha256": "a6b14f8983976fb49debb3d9e8a15bf95f724d7169f1315a62efa58a7fa899e2",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-terminal-jansi/3.20.0/jline-terminal-jansi-3.20.0.jar",
+        "sha256": "c17ffefa8f060daefd38f25744070e408f4bac53c3e813aea1928cc607260fe4",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar",
+        "sha256": "acd1c94d1e228aa7b7962f69b21ed3a9fd828eb3a63e4baf9086954e626af1f0",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-util-onnx/4.2.0/tribuo-util-onnx-4.2.0.jar",
+        "sha256": "a21700ab89cb075fce4fc5240359f91cc8f8b7f242892d65b03fa875ad2cdd5b",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.17.3/protobuf-java-3.17.3.jar",
         "sha256": "4ac549b192694141958049f060a1c826a33342f619e108ced8c17d9877f5e3ed",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-style/3.20.0/jline-style-3.20.0.jar",
+        "sha256": "0bb111605e0100ce84d3961f30b40daa088e9c2ec5c671e7ef90f42f6add06b6",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar",
+        "sha256": "12125170e795519ba6dc8010c070b53c76aae92b485c1e37530e54ab5dd08d43",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -475,50 +505,14 @@
     },
     {
         "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-terminal-jansi/3.20.0/jline-terminal-jansi-3.20.0.jar",
-        "sha256": "c17ffefa8f060daefd38f25744070e408f4bac53c3e813aea1928cc607260fe4",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar",
-        "sha256": "12125170e795519ba6dc8010c070b53c76aae92b485c1e37530e54ab5dd08d43",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-classification-core/4.2.0/tribuo-classification-core-4.2.0.jar",
-        "sha256": "fafbf93a722b9ab542ee879a5f4f651796e4caea1b67980d5562fe8dd8dba9e6",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-builtins/3.20.0/jline-builtins-3.20.0.jar",
-        "sha256": "a6b14f8983976fb49debb3d9e8a15bf95f724d7169f1315a62efa58a7fa899e2",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/jline/jline-style/3.20.0/jline-style-3.20.0.jar",
-        "sha256": "0bb111605e0100ce84d3961f30b40daa088e9c2ec5c671e7ef90f42f6add06b6",
+        "url": "https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar",
+        "sha256": "7d938c81789028045c08c065e94be75fc280527620d5bd62b519d5838532368a",
         "dest": "dependencies/flatRepo"
     },
     {
         "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar",
         "sha256": "1df8b9430b5c8ed143d7815e403e33ef5371b2400aadbe9bda0883762e0846d1",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/org/tribuo/tribuo-util-onnx/4.2.0/tribuo-util-onnx-4.2.0.jar",
-        "sha256": "a21700ab89cb075fce4fc5240359f91cc8f8b7f242892d65b03fa875ad2cdd5b",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar",
-        "sha256": "7d938c81789028045c08c065e94be75fc280527620d5bd62b519d5838532368a",
         "dest": "dependencies/flatRepo"
     },
     {
@@ -541,6 +535,12 @@
     },
     {
         "type": "file",
+        "url": "https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar",
+        "sha256": "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a",
+        "dest": "dependencies/flatRepo"
+    },
+    {
+        "type": "file",
         "url": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar",
         "sha256": "f02a95fa1a5e95edb3ed859fd0fb7df709d121a35290eff8b74dce2ab7f4d6ed",
         "dest": "dependencies/flatRepo"
@@ -549,12 +549,6 @@
         "type": "file",
         "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
         "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
-        "dest": "dependencies/flatRepo"
-    },
-    {
-        "type": "file",
-        "url": "https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar",
-        "sha256": "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a",
         "dest": "dependencies/flatRepo"
     },
     {
