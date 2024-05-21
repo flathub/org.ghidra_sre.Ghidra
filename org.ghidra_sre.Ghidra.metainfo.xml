@@ -33,13 +33,13 @@
   <url type="vcs-browser">https://github.com/NationalSecurityAgency/ghidra</url>
   <url type="contribute">https://github.com/NationalSecurityAgency/ghidra/blob/master/CONTRIBUTING.md</url>
   <screenshots>
-    <screenshot type="default">
+    <screenshot>
       <caption>“Project” Window</caption>
       <image width="805" height="605">
         https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-project-view.png
       </image>
     </screenshot>
-    <screenshot>
+    <screenshot type="default">
       <caption>Main Window</caption>
       <image width="1384" height="856">
         https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-main-window.png
