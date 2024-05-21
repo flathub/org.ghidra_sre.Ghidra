@@ -27,6 +27,11 @@
     <p>NOTE: This wrapper is not verified by, affiliated with, or supported by the National Security Agency Research Directorate.</p>
   </description>
   <url type="homepage">https://ghidra-sre.org/</url>
+  <url type="bugtracker">https://github.com/NationalSecurityAgency/ghidra/issues</url>
+  <url type="faq">https://github.com/NationalSecurityAgency/ghidra/wiki/Frequently-asked-questions</url>
+  <url type="help">https://htmlpreview.github.io/?https://github.com/NationalSecurityAgency/ghidra/blob/stable/GhidraDocs/CheatSheet.html</url>
+  <url type="vcs-browser">https://github.com/NationalSecurityAgency/ghidra</url>
+  <url type="contribute">https://github.com/NationalSecurityAgency/ghidra/blob/master/CONTRIBUTING.md</url>
   <screenshots>
     <screenshot type="default">
       <caption>“Project” Window</caption>
