@@ -4,9 +4,11 @@
   <id>org.ghidra_sre.Ghidra</id>
   <name>Ghidra</name>
   <summary>Ghidra Reverse Engineering Suite</summary>
-  <developer_name>National Security Agency</developer_name>
-  <metadata_license>CC0-1.0</metadata_license>
+  <developer id="gov.nsa">
+    <name>National Security Agency</name>
+  </developer>
   <!-- license from https://github.com/NationalSecurityAgency/ghidra/blob/master/LICENSE -->
+  <metadata_license>CC0-1.0</metadata_license>
   <project_license>Apache-2.0</project_license>
   <launchable type="desktop-id">org.ghidra_sre.Ghidra.desktop</launchable>
   <content_rating type="oars-1.1"/>
@@ -26,14 +28,19 @@
     <p>NOTE: This wrapper is not verified by, affiliated with, or supported by the National Security Agency Research Directorate.</p>
   </description>
   <url type="homepage">https://ghidra-sre.org/</url>
+  <url type="bugtracker">https://github.com/NationalSecurityAgency/ghidra/issues</url>
+  <url type="faq">https://github.com/NationalSecurityAgency/ghidra/wiki/Frequently-asked-questions</url>
+  <url type="help">https://htmlpreview.github.io/?https://github.com/NationalSecurityAgency/ghidra/blob/stable/GhidraDocs/CheatSheet.html</url>
+  <url type="vcs-browser">https://github.com/NationalSecurityAgency/ghidra</url>
+  <url type="contribute">https://github.com/NationalSecurityAgency/ghidra/blob/master/CONTRIBUTING.md</url>
   <screenshots>
-    <screenshot type="default">
+    <screenshot>
       <caption>“Project” Window</caption>
       <image width="805" height="605">
         https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-project-view.png
       </image>
     </screenshot>
-    <screenshot>
+    <screenshot type="default">
       <caption>Main Window</caption>
       <image width="1384" height="856">
         https://github.com/flathub/org.ghidra_sre.Ghidra/raw/master/screenshots/ghidra-main-window.png
