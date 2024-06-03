@@ -6,3 +6,4 @@ Categories=Application;Development;
 Exec=/app/bin/ghidra
 Terminal=false
 Icon=org.ghidra_sre.Ghidra
+Keywords=reverse-engineering;disassembler;disassembly;assembler;assembly;asm;decompile;decompilation;software-analysis;security;
