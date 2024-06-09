@@ -68,9 +68,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "Ghidra_11.0.3_build",
+                    "tag": "Ghidra_11.1_build",
                     "url": "https://github.com/NationalSecurityAgency/ghidra.git",
-                    "commit": "ec868c12b688636db73ab569fb24599a8cf9d470",
+                    "commit": "dee48e96c13d6ff2e773c81d59d2708979400216",
                     "x-checker-data": {
                         "type": "json",
                         "is-main-source": true,
@@ -106,6 +106,30 @@
                     "url": "https://github.com/pxb1988/dex2jar/releases/download/v2.1/dex2jar-2.1.zip",
                     "sha256": "7a9bdf843d43de4d1e94ec2e7b6f55825017b0c4a7ee39ff82660e2493a46f08",
                     "dest": "dex2jar"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8d/14/619e24a4c70df2901e1f4dbc50a6291eb63a759172558df326347dce1f0d/protobuf-3.20.3-py2.py3-none-any.whl",
+                    "sha256": "a7ca6d488aa8ff7f329d4c545b2dbad8ac31464f1d8b1c87ad1346717731e4db",
+                    "dest": "dependencies/Debugger-rmi-trace/"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/90/c7/6dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2/psutil-5.9.8.tar.gz",
+                    "sha256": "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c",
+                    "dest": "dependencies/Debugger-rmi-trace/"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/c7/42/be1c7bbdd83e1bfb160c94b9cafd8e25efc7400346cf7ccdbdb452c467fa/setuptools-68.0.0-py3-none-any.whl",
+                    "sha256": "11e52c67415a381d10d6b462ced9cfb97066179f0e871399e006c4ab101fc85f",
+                    "dest": "dependencies/Debugger-rmi-trace/"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/wheel-0.37.1-py2.py3-none-any.whl",
+                    "sha256": "4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a",
+                    "dest": "dependencies/Debugger-rmi-trace/"
                 },
                 {
                     "type": "file",
