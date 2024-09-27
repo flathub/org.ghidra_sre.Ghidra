@@ -4,7 +4,7 @@
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk17"
+        "org.freedesktop.Sdk.Extension.openjdk21"
     ],
     "command": "ghidra",
     "finish-args": [
@@ -23,7 +23,7 @@
             "name": "openjdk",
             "buildsystem": "simple",
             "build-commands": [
-                "/usr/lib/sdk/openjdk17/installjdk.sh"
+                "/usr/lib/sdk/openjdk21/installjdk.sh"
             ]
         },
         {
@@ -52,7 +52,7 @@
                 "cp ghidra-data/lib/*.jar dependencies/flatRepo",
                 "cp -r ghidra-data/FunctionID dependencies/fidb",
                 "sed -i 's/^application.release.name=DEV$/application.release.name=FLATPAK/' Ghidra/application.properties",
-                "source /usr/lib/sdk/openjdk17/enable.sh && gradle buildGhidra",
+                "source /usr/lib/sdk/openjdk21/enable.sh && gradle buildGhidra",
                 "unzip build/dist/ghidra_*_FLATPAK_*_linux_*.zip",
                 "icotool -x Ghidra/RuntimeScripts/Windows/support/ghidra.ico --index=8",
                 "cp -r ghidra_*_FLATPAK /app/lib/ghidra",
