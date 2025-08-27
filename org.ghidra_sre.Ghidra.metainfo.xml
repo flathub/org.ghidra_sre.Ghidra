@@ -55,8 +55,11 @@
   </screenshots>
   <update_contact>hadess@hadess.net</update_contact>
   <releases>
-    <release version="11.4.1" date="2025-07-31">
+    <release version="11.4.2" date="2025-08-27">
       <description></description>
+    </release>
+    <release version="11.4.1" date="2025-07-31">
+      <description/>
     </release>
     <release version="11.4" date="2025-06-24">
       <description/>
