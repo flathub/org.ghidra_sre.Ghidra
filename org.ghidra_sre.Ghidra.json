@@ -50,6 +50,11 @@
             "build-commands": [
                 "cp dex2jar/lib/dex-*.jar dependencies/flatRepo",
                 "cp ghidra-data/lib/*.jar dependencies/flatRepo",
+                "mkdir -p dependencies/SymbolicSummaryZ3/os/linux_x86_64",
+                "mkdir -p dependencies/SymbolicSummaryZ3/os/linux_arm64",
+                "cp z3-x64/bin/libz3*.so dependencies/SymbolicSummaryZ3/os/linux_x86_64",
+                "cp z3-arm64/bin/libz3*.so dependencies/SymbolicSummaryZ3/os/linux_arm64",
+                "cp z3-x64/bin/com.microsoft.z3.jar dependencies/flatRepo",
                 "cp -r ghidra-data/FunctionID dependencies/fidb",
                 "sed -i 's/^application.release.name=DEV$/application.release.name=FLATPAK/' Ghidra/application.properties",
                 "source /usr/lib/sdk/openjdk21/enable.sh && gradle buildGhidra",
@@ -67,9 +72,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "Ghidra_11.4.3_build",
+                    "tag": "Ghidra_12.0_build",
                     "url": "https://github.com/NationalSecurityAgency/ghidra.git",
-                    "commit": "a8c0ec7e221699249595143eb8e528a34676a93c",
+                    "commit": "6452eb3a07a382c20eb6e9d845b72e555dcbb059",
                     "x-checker-data": {
                         "type": "json",
                         "is-main-source": true,
@@ -154,6 +159,24 @@
                     "sha256": "4d81fe9d8afe7665b8ea20844d3f5107f446742927c59973eade4f29809b0699",
                     "dest": "dependencies/GhidraDev",
                     "dest-filename": "PyDev 6.3.1.zip"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/NationalSecurityAgency/ghidra-data/raw/Ghidra_12.0/Debugger/dbgmodel.tlb",
+                    "sha256": "8cf5f3a2eb81160aa349056a5ca4c2c726b1b6e98bf3097cd4135147163343c7",
+                    "dest": "dependencies/Debugger-agent-dbgeng"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Z3Prover/z3/releases/download/z3-4.13.0/z3-4.13.0-x64-glibc-2.31.zip",
+                    "sha256": "bc31ad12446d7db1bd9d0ac82dec9d7b5129b8b8dd6e44b571a83ac6010d2f9b",
+                    "dest": "z3-x64/"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Z3Prover/z3/releases/download/z3-4.15.4/z3-4.15.4-arm64-glibc-2.34.zip",
+                    "sha256": "9e832578e28d9ed51a79b97948728a874854a3c38ee49e7aae05e7d6e0e93508",
+                    "dest": "z3-arm64"
                 },
                 {
                     "type": "git",
