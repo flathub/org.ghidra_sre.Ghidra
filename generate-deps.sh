@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 get_sdk()
 {
 	OUTPUT=$(flatpak info org.freedesktop.Sdk 2>&1)
@@ -22,11 +24,22 @@ verify_jdk()
 	fi
 }
 
+get_ghidra_version()
+{
+	TAG=$(jq -r '.["modules"].[] | select(.name=="ghidra")["sources"][] | select(.url=="https://github.com/NationalSecurityAgency/ghidra.git")["tag"]' org.ghidra_sre.Ghidra.json 2> /dev/null)
+	if [ -z "$TAG" ] ; then
+		echo "Could not extract current release tag from org.ghidra_sre.Ghidra.json"
+		exit 1
+	fi
+	echo $TAG
+}
+
 SDK=$(get_sdk)
 verify_jdk
+TAG=$(get_ghidra_version)
 
 rm -rf _deps_build
-git clone https://github.com/NationalSecurityAgency/ghidra.git -b stable _deps_build
+git clone https://github.com/NationalSecurityAgency/ghidra.git -b "$TAG" _deps_build
 cd _deps_build
 echo "Generating deps log in Sdk $SDK"
 echo "source /usr/lib/sdk/openjdk21/enable.sh && gradle -g gradle-cache --init-script gradle/support/fetchDependencies.gradle && rm -rf gradle-cache && gradle -g gradle-cache --info --console plain buildGhidra > gradle-log.txt" | flatpak run --share=network --filesystem=`pwd` --devel $SDK
