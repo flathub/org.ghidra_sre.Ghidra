@@ -1,0 +1,13 @@
+diff --git a/build.gradle b/build.gradle
+index da978cca8894..fcfb595c95f4 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -75,8 +75,6 @@ def flatRepo = file("${DEPS_DIR}/flatRepo")
+ if (flatRepo.isDirectory()) {
+ 	allprojects {
+ 		repositories {
+-			mavenLocal()
+-			mavenCentral()
+ 			flatDir name: "flat", dirs:["$flatRepo"]
+ 		}
+ 	}
