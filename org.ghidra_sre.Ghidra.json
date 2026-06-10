@@ -116,85 +116,6 @@
                     "dest": "dex2jar"
                 },
                 {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ee/01/1ed1d482960a5718fd99c82f6d79120181947cfd4667ec3944d448ed44a3/protobuf-6.31.0-py3-none-any.whl",
-                    "sha256": "6ac2e82556e822c17a8d23aa1190bbc1d06efb9c261981da95c71c9da09e9e23",
-                    "dest": "dependencies/Debugger-rmi-trace/"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/90/c7/6dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2/psutil-5.9.8.tar.gz",
-                    "sha256": "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c",
-                    "dest": "dependencies/Debugger-rmi-trace/"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl",
-                    "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922",
-                    "dest": "dependencies/Debugger-rmi-trace/"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/0b/2c/87f3254fd8ffd29e4c02732eee68a83a1d3c346ae39bc6822dcbcb697f2b/wheel-0.45.1-py3-none-any.whl",
-                    "sha256": "708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248",
-                    "dest": "dependencies/Debugger-rmi-trace/"
-                },
-                {
-                    "type": "file",
-                    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/AXMLPrinter2.jar",
-                    "sha256": "00ed038eb6abaf6ddec8d202a3ed7a81b521458f4cd459948115cfd02ff59d6d",
-                    "dest": "dependencies/flatRepo"
-                },
-                {
-                    "type": "file",
-                    "url": "https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-13.18/yajsw-stable-13.18.zip",
-                    "sha256": "50b34e9817c54b2970fa511ff4584f6556c179f69833aa8b9b1ff6485b61684f",
-                    "dest": "dependencies/GhidraServer"
-                },
-                {
-                    "type": "file",
-                    "url": "https://archive.eclipse.org/tools/cdt/releases/8.6/cdt-8.6.0.zip",
-                    "sha256": "81b7d19d57c4a3009f4761699a72e8d642b5e1d9251d2bb98df438b1e28f8ba9",
-                    "dest": "dependencies/GhidraDev"
-                },
-                {
-                    "type": "file",
-                    "url": "https://sourceforge.net/projects/pydev/files/pydev/PyDev 6.3.1/PyDev 6.3.1.zip",
-                    "sha256": "4d81fe9d8afe7665b8ea20844d3f5107f446742927c59973eade4f29809b0699",
-                    "dest": "dependencies/GhidraDev",
-                    "dest-filename": "PyDev 6.3.1.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/NationalSecurityAgency/ghidra-data/raw/Ghidra_12.0/Debugger/dbgmodel.tlb",
-                    "sha256": "8cf5f3a2eb81160aa349056a5ca4c2c726b1b6e98bf3097cd4135147163343c7",
-                    "dest": "dependencies/Debugger-agent-dbgeng"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ce/78/91db67e7fe1546dc8b02c38591b7732980373d2d252372f7358054031dd4/Pybag-2.2.12-py3-none-any.whl",
-                    "sha256": "eda5ee6c4e873902981b7f525b42a02428b87c7368df2c5bdfe1ded0e6884126",
-                    "dest": "dependencies/Debugger-agent-dbgeng"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d0/dd/b28df50316ca193dd1275a4c47115a720796d9e1501c1888c4bfa5dc2260/capstone-5.0.1-py3-none-win_amd64.whl",
-                    "sha256": "1bfa5c81e6880caf41a31946cd6d2d069c048bcc22edf121254b501a048de675",
-                    "dest": "dependencies/Debugger-agent-dbgeng"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/50/8f/518a37381e55a8857a638afa86143efa5508434613541402d20611a1b322/comtypes-1.4.1-py3-none-any.whl",
-                    "sha256": "a208a0e3ca1c0a5362735da0ff661822801dce87312b894d7d752add010a21b0",
-                    "dest": "dependencies/Debugger-agent-dbgeng"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/83/1c/25b79fc3ec99b19b0a0730cc47356f7e2959863bf9f3cd314332bddb4f68/pywin32-306-cp312-cp312-win_amd64.whl",
-                    "sha256": "37257794c1ad39ee9be652da0462dc2e394c8159dfd913a8a4e8eb6fd346da0e",
-                    "dest": "dependencies/Debugger-agent-dbgeng"
-                },
-                {
                     "type": "archive",
                     "url": "https://github.com/Z3Prover/z3/releases/download/z3-4.13.0/z3-4.13.0-x64-glibc-2.31.zip",
                     "sha256": "bc31ad12446d7db1bd9d0ac82dec9d7b5129b8b8dd6e44b571a83ac6010d2f9b",
@@ -207,6 +128,12 @@
                     "dest": "z3-arm64"
                 },
                 {
+                    "type": "file",
+                    "url": "https://github.com/NationalSecurityAgency/ghidra-data/raw/Ghidra_12.0/Debugger/dbgmodel.tlb",
+                    "sha256": "8cf5f3a2eb81160aa349056a5ca4c2c726b1b6e98bf3097cd4135147163343c7",
+                    "dest": "dependencies/Debugger-agent-dbgeng"
+                },
+                {
                     "type": "git",
                     "tag": "Ghidra_12.2",
                     "url": "https://github.com/NationalSecurityAgency/ghidra-data.git",
@@ -217,7 +144,8 @@
                         "tag-pattern": "^Ghidra_([\\d.]+)$"
                     }
                 },
-                "gradle-dependencies.json"
+                "gradle-dependencies.json",
+                "gradle-fetched-dependencies.json"
             ]
         }
     ]
