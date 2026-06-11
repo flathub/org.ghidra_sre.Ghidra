@@ -41,6 +41,11 @@
                         "project-id": 1360,
                         "url-template": "https://download.savannah.gnu.org/releases/icoutils/icoutils-$version.tar.bz2"
                     }
+                },
+                {
+                    "type": "patch",
+                    /* From https://github.com/flathub/org.kde.dolphin/blob/master/icoutils-gcc15.patch */
+                    "path": "icoutils-gcc15.patch"
                 }
             ]
         },
