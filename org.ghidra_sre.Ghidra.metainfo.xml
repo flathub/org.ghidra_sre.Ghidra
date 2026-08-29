@@ -13,7 +13,6 @@
   <launchable type="desktop-id">org.ghidra_sre.Ghidra.desktop</launchable>
   <content_rating type="oars-1.1"/>
   <description>
-    <p>**Note: This wrapper is not verified by, affiliated with, or supported by the National Security Agency Research Directorate.**</p>
     <p>
       Ghidra is a software reverse engineering (SRE) framework. This framework includes
       a suite of full-featured, high-end software analysis tools that enable users to
