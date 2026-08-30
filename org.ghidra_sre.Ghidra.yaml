@@ -63,9 +63,9 @@ modules:
       - sed -i 's,bg,fg,' /app/lib/ghidra/ghidraRun
     sources:
       - type: git
-        tag: Ghidra_12.1.2_build
+        tag: Ghidra_12.1.3_build
         url: https://github.com/NationalSecurityAgency/ghidra.git
-        commit: c0f584bf229fffba61b36431f3ce30c0c3e4e682
+        commit: 8b4c91d4d5bd1549622bfbade0df199585b98365
         x-checker-data:
           type: json
           is-main-source: true
@@ -89,8 +89,8 @@ modules:
       - type: script
         dest-filename: ghidra.sh
         commands:
-          - '# Create a default ghidra.properties if one wasn''t already set, for
-            the user to edit'
+          - "# Create a default ghidra.properties if one wasn't already set, for the\
+            \ user to edit"
           - '[[ -f /var/config/ghidra.properties ]] || cp /app/lib/ghidra/support/launch.properties.orig
             /var/config/ghidra.properties'
           - exec /app/lib/ghidra/ghidraRun "$@"
