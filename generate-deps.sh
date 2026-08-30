@@ -26,9 +26,9 @@ verify_jdk()
 
 get_ghidra_version()
 {
-	TAG=$(jq -r '.["modules"].[] | select(.name=="ghidra")["sources"][] | select(.url=="https://github.com/NationalSecurityAgency/ghidra.git")["tag"]' org.ghidra_sre.Ghidra.json 2> /dev/null)
+	TAG=$(yq -r '.["modules"].[] | select(.name=="ghidra")["sources"][] | select(.url=="https://github.com/NationalSecurityAgency/ghidra.git")["tag"]' org.ghidra_sre.Ghidra.yaml 2> /dev/null)
 	if [ -z "$TAG" ] ; then
-		echo "Could not extract current release tag from org.ghidra_sre.Ghidra.json"
+		echo "Could not extract current release tag from org.ghidra_sre.Ghidra.yaml"
 		exit 1
 	fi
 	echo $TAG
@@ -36,9 +36,9 @@ get_ghidra_version()
 
 get_ghidra_data_version()
 {
-	TAG=$(jq -r '.["modules"].[] | select(.name=="ghidra")["sources"][] | select(.url=="https://github.com/NationalSecurityAgency/ghidra-data.git")["tag"]' org.ghidra_sre.Ghidra.json 2> /dev/null)
+	TAG=$(yq -r '.["modules"].[] | select(.name=="ghidra")["sources"][] | select(.url=="https://github.com/NationalSecurityAgency/ghidra-data.git")["tag"]' org.ghidra_sre.Ghidra.yaml 2> /dev/null)
 	if [ -z "$TAG" ] ; then
-		echo "Could not extract current data release tag from org.ghidra_sre.Ghidra.json"
+		echo "Could not extract current data release tag from org.ghidra_sre.Ghidra.yaml"
 		exit 1
 	fi
 	echo $TAG | sed 's/Ghidra_//'
