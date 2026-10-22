@@ -4,13 +4,12 @@ set -e
 
 get_sdk()
 {
-	OUTPUT=$(flatpak info org.freedesktop.Sdk 2>&1)
+	SDK=$(yq -r '.sdk' org.ghidra_sre.Ghidra.yaml 2> /dev/null)
 	RET=$?
-
-	if [ $RET -eq 0 ] ; then
+	if [ $RET -ne 0 ] ; then
 		echo org.freedesktop.Sdk
 	else
-		echo $OUTPUT | awk '{print $NF}'
+		echo "${SDK}//$(yq -r '.runtime-version' org.ghidra_sre.Ghidra.yaml)"
 	fi
 }
 
