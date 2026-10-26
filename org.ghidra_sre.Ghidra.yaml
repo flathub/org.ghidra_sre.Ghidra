@@ -63,9 +63,9 @@ modules:
       - sed -i 's,bg,fg,' /app/lib/ghidra/ghidraRun
     sources:
       - type: git
-        tag: Ghidra_12.1.3_build
+        tag: Ghidra_12.2_build
         url: https://github.com/NationalSecurityAgency/ghidra.git
-        commit: 8b4c91d4d5bd1549622bfbade0df199585b98365
+        commit: 8ca9077040cc43cd790babcfccf19475622a3e9a
         x-checker-data:
           type: json
           is-main-source: true
